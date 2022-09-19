@@ -15,21 +15,26 @@ Team members
 
 === Sunday 2022-09-04
 *Karl:* Started work on testrobot electronics and assisted with initial NUC setup. (3h)
+
 *Virco:* Installed Ubuntu and setup NUC to open without the need of direct input. (2h)
+
 *Markus:* Worked with Virco to help setup NUC to specified requierments. (2h)
 
 === Tuesday 2022-09-06
 *Kevin:* Added VNC connection capability to NUC. MacOS didn't like VSC SSH connection. Will try SSH again on later date. (2h)
+
 *Karl:* Continued soldering electronics. Discovered burnt capacitor on motor board. (2h)
 
 === Monday 2022-09-12
 *Karl:* Finished soldering testrobot electronics and changed out burnt capacitor. Will test motors later this week. (3h)
+
 *Markus:* Continued debugging SSH connection. Static connection settings didn't work (MacOS wasn't the problem). Will attempt to fix later this week. (2h)
 
 === Tuesday 2022-09-13
-*Karl:* Minor fixes to testrobot electronics. Positioned components and wires better. Ran into a problem with Hterm motor testing. 
-        Will make second attempt later in the week. (2.5h)
+*Karl:* Minor fixes to testrobot electronics. Positioned components and wires better. Ran into a problem with Hterm motor testing. Will make second attempt later in the week. (2.5h)
+        
 *Kevin:* Got a stable remote connection with the added ability to have other members connect to Valids from their homes(if not present). (2.5h)
+
 *Markus:* Worked with Kevin to get remote connection up and running. (2.5h)
 
 === Sunday 2022-09-18
