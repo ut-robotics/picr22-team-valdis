@@ -31,3 +31,6 @@ Team members
         Will make second attempt later in the week. (2.5h)
 *Kevin:* Got a stable remote connection with the added ability to have other members connect to Valids from their homes(if not present). (2.5h)
 *Markus:* Worked with Kevin to get remote connection up and running. (2.5h)
+
+=== Sunday 2022-09-18
+*Kevin:* Tested different ball detection methods to determine best one (2h)
