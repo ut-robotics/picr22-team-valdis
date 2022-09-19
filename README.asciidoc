@@ -3,9 +3,13 @@
 Team members
 
 *Electronics:* Karl Sander Vinkel
+
 *Mechanics:* Virco Hermann
+
 *Programming:* Kevin Kirbits
+
 *Programming:* Markus Männil
+
 *Programming:* Arnold Leonhard Mertsin
 
 == Blog
