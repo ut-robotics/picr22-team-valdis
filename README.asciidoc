@@ -43,3 +43,9 @@ Team members
 
 === Sunday 2022-09-18
 *Kevin:* Tested different ball detection methods to determine best one (2h)
+
+=== Monday 2022-09-19
+*Everyone:* Progress presentation (1.5h)
+
+=== Thursday 2022-09-22
+*Karl:* Test robot components tested and all working with external powersupply. Assembled robot. Have to extend battery connector and clean up wires a bit. (2.5h)
