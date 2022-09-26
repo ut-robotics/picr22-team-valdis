@@ -56,3 +56,9 @@ SSH valdis@valdis password: valdis
 
 === Thursday 2022-09-22
 *Karl:* Test robot components tested and all working with external powersupply. Assembled robot. Have to extend battery connector and clean up wires a bit. (2.5h)
+
+=== Monday 2022-09-26
+*Karl:* Minor fixes to testrobot. Discovered possible issue with wheel motor encoder (working for now). Remounted camera. Helped with programming. (2.5h)
+*Virco:* Discussed thrower design with instructors. Will make adjustments to design for revision. (2h)
+*Markus:* Tested different camera settings for ball and court detection. (2.5h)
+*Arnold:* Tested different camera settings for ball and court detection. (2h)
