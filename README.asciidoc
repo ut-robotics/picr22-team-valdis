@@ -12,6 +12,13 @@ Team members
 
 *Programming:* Arnold Leonhard Mertsin
 
+
+== Info
+
+Anydesk ip 198414610 - Valdis111
+
+SSH valdis@valdis password: valdis
+
 == Blog
 
 === Saturday 2022-09-03
