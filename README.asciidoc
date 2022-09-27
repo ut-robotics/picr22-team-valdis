@@ -19,6 +19,9 @@ Anydesk ip 198414610 - Valdis111
 
 SSH valdis@valdis password: valdis
 
+static ip: 172.17.152.9
+
+
 == Blog
 
 === Saturday 2022-09-03
@@ -62,3 +65,4 @@ SSH valdis@valdis password: valdis
 *Virco:* Discussed thrower design with instructors. Will make adjustments to design for revision. (2h)
 *Markus:* Tested different camera settings for ball and court detection. (2.5h)
 *Arnold:* Tested different camera settings for ball and court detection. (2h)
+
