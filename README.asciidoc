@@ -78,3 +78,8 @@ static ip: 172.17.152.9
 
 *Arnold:* Tested different camera settings for ball and court detection. (2h)
 
+=== Wednesday 2022-09-28
+*Karl:* Got mainboard-NUC communications working and the testrobot is capable of moving on it's own. Experimented with pyrealsense2 library to implement depth sensor. Worked on PCB schematic. (4h)
+
+*Markus:* Helped set up mainboard communication with NUC. (2h)
+
