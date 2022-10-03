@@ -83,3 +83,11 @@ static ip: 172.17.152.9
 
 *Markus:* Helped set up mainboard communication with NUC. (2h)
 
+=== Thursday 2022-09-29
+*Virco:* Finished thrower design and showed to instructors. Waiting to be cut and assembled. (2h)
+
+*Karl:* Worked on schematic and object distance measuring with realsense camera. (4h)
+
+=== Saturday 2022-09-01
+*Karl:* Worked on schematic. (1.5h)
+
