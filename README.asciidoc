@@ -91,3 +91,6 @@ static ip: 172.17.152.9
 === Saturday 2022-10-01
 *Karl:* Worked on schematic. (1.5h)
 
+=== Monday 2022-10-03
+*Markus:* Progress presentation (2h)
+
