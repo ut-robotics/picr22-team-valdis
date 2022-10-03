@@ -88,6 +88,6 @@ static ip: 172.17.152.9
 
 *Karl:* Worked on schematic and object distance measuring with realsense camera. (4h)
 
-=== Saturday 2022-09-01
+=== Saturday 2022-10-01
 *Karl:* Worked on schematic. (1.5h)
 
