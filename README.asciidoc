@@ -94,3 +94,7 @@ static ip: 172.17.152.9
 === Monday 2022-10-03
 *Markus:* Progress presentation (2h)
 
+=== Monday 2022-10-05
+*Markus:* Tested moving with serial and struct (2h)
+*Arnold:* Tested moving with serial and struct (2h)
+
