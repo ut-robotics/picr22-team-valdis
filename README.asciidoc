@@ -4,7 +4,7 @@ Team members
 
 *Electronics:* Karl Sander Vinkel
 
-*Mechanics:* Virco Hermann
+*Mechanics:* Karl Sander Vinkel, Kevin Kirbits
 
 *Programming:* Kevin Kirbits
 
@@ -94,7 +94,16 @@ static ip: 172.17.152.9
 === Monday 2022-10-03
 *Markus:* Progress presentation (2h)
 
-=== Monday 2022-10-05
+=== Wednesday 2022-10-05
 *Markus:* Tested moving with serial and struct (2h)
+
 *Arnold:* Tested moving with serial and struct (2h)
+
+=== Monday 2022-10-10
+*Mechanics:* Virco left the course. New mechanics are Karl and Kevin.
+
+*Karl:* Worked on schematic. (1.5h)
+
+=== Tuesday 2022-10-11
+*Kevin:* Tested remote control integration. Successfully moved robot forward with remote control. Will add more functionality on a later date. (2h)
 
