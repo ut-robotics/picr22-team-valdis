@@ -112,9 +112,9 @@ static ip: 172.17.152.9
 === Friday 2022-10-14
 *Kevin:* Added more functionality to moving robot with controller. (2h)
 
-*Markus:* Made game logic diagram to establish tasks to work on. (2h)
+*Markus:* Made game logic diagram to establish tasks to work on. Optimized movement. (2h)
 
-*Arnold:* Made game logic diagram to establish tasks to work on. (2h)
+*Arnold:* Made game logic diagram to establish tasks to work on. Optimized movement. (2h)
 
 === Sunday 2022-10-16
 *Kevin:* Added more functionality to moving robot with controller. (2h)
