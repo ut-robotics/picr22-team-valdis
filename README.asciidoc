@@ -107,3 +107,16 @@ static ip: 172.17.152.9
 === Tuesday 2022-10-11
 *Kevin:* Tested remote control integration. Successfully moved robot forward with remote control. Will add more functionality on a later date. (2h)
 
+*Karl:* Worked on schematic. (1h)
+
+=== Friday 2022-10-14
+*Kevin:* Added more functionality to moving robot with controller. (2h)
+
+*Markus:* Made game logic diagram to establish tasks to work on. (2h)
+
+*Arnold:* Made game logic diagram to establish tasks to work on. (2h)
+
+=== Sunday 2022-10-16
+*Kevin:* Added more functionality to moving robot with controller. (2h)
+
+
