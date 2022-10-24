@@ -119,4 +119,8 @@ static ip: 172.17.152.9
 === Sunday 2022-10-16
 *Kevin:* Added more functionality to moving robot with controller. (2h)
 
+== Monday 2022-10-17
+*Arnold:* Progress presentation. (2h)
+
+*Karl:* Worked on fixing thrower design from feedback. Also started working on second design with adjustable throwing angle. (5h)
 
