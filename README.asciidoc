@@ -127,5 +127,11 @@ static ip: 172.17.152.9
 === Thursday 2022-10-20
 *Karl:* Continued work on thrower design. Also started second design with adjustable thrower angle. (5h)
 
+=== Friday 2022-10-28
+*Karl:* Finished thrower fabrication and added thrower to robot. Thrower motor needs more grip.  Also helped with ball following algorithm.  (4h)
+
+*Markus:* Worked on robot-ball lineup algorithm. Tested throwing capability. (4h)
+
+*Kevin:* Worked on controller, added mapped a throw button. Helped with ball following algorithm. (4h)
 
 
