@@ -134,4 +134,8 @@ static ip: 172.17.152.9
 
 *Kevin:* Worked on controller, added mapped a throw button. Helped with ball following algorithm. (4h)
 
+=== Monday 2022-10-31
+*Markus:* Tuned color mapping and movement after detection. (1h)
+
+*Karl:* Mapped linear thrower controls and added 2-speed controls for movement with controller. (1h)
 
