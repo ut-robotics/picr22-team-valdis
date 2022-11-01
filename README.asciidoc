@@ -142,3 +142,8 @@ static ip: 172.17.152.9
 
 *Karl:* Mapped linear thrower controls and added 2-speed controls for movement with controller. (1h)
 
+=== Tuesday 2022-11-01
+*Markus:* Worked on fine tuning movement. (2h)
+
+*Kar:* Worked on two different omniwheel designs, one with 3D printed large rollers and one with small metal rollers. Will discuss which option to further pursue. (2h)
+
