@@ -147,3 +147,5 @@ static ip: 172.17.152.9
 
 *Kar:* Worked on two different omniwheel designs, one with 3D printed large rollers and one with small metal rollers. Will discuss which option to further pursue. (2h)
 
+=== Friday 2022-11-04
+*Karl:* Finished wheel design revision. Finished motor mount and camera mount (top and bottom plates are about 80% complete for initial design). Will get measurements for batteries and thrower voltage regulator over the weekend. Will also start work on an updated thrower design (current throw angle is a bit too steep). Completed new chassis design to be expected by Monday. Will also work on finishing schematic over the weekend to start work on PCB by next week. Also had idea for fixed battery sockets but won't concentrate on those at this time. (7h)
