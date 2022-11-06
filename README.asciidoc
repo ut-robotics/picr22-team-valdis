@@ -152,4 +152,3 @@ static ip: 172.17.152.9
 
 === Sunday 2022-11-07
 *Kevin and Arnold:* Did adjustments to the orbiting. Valdis will orbit around the ball until the ball is directly in the path of the basket. Once the adequate conditions are met valdis will pick up the ball and shoot. (Next up on the todo is to adjust the throwing angle and motor speed)(Also need to fix the startup ball finding procedure, if the robot sees no ball at initial startup the program will crash). (3h)
-=== Friday 2022-11-04
