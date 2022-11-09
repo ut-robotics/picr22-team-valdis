@@ -150,5 +150,16 @@ static ip: 172.17.152.9
 === Friday 2022-11-04
 *Karl:* Finished wheel design revision. Finished motor mount and camera mount (top and bottom plates are about 80% complete for initial design). Will get measurements for batteries and thrower voltage regulator over the weekend. Will also start work on an updated thrower design (current throw angle is a bit too steep). Completed new chassis design to be expected by Monday. Will also work on finishing schematic over the weekend to start work on PCB by next week. Also had idea for fixed battery sockets but won't concentrate on those at this time. (7h)
 
-=== Sunday 2022-11-07
+=== Sunday 2022-11-06
 *Kevin and Arnold:* Did adjustments to the orbiting. Valdis will orbit around the ball until the ball is directly in the path of the basket. Once the adequate conditions are met valdis will pick up the ball and shoot. (Next up on the todo is to adjust the throwing angle and motor speed)(Also need to fix the startup ball finding procedure, if the robot sees no ball at initial startup the program will crash). (3h)
+
+=== Monday 2022-11-07
+*Karl:* Worked on new chassis and schematic. (3h)
+
+=== Tuesday 2022-11-08
+*Karl:* Adjusted new thrower design so that ramp walls are closer together. Printed new wheels. Made modifications to thrower motor support piece. (5h)
+
+*Kevin:* Worked on omnimotion. (4h)
+
+*Markus:* Worked on omnimotion. (5h)
+=== Wednesday 2022-11-09
