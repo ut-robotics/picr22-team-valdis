@@ -178,3 +178,6 @@ static ip: 172.17.152.9
 
 === Sunday 2022-11-13
 *Karl:* Worked on schematic. (4h)
+
+=== Monday 2022-11-14
+*Karl:* Fixed issues on schematic. (1h)
