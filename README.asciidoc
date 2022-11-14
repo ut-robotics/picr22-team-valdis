@@ -155,6 +155,7 @@ static ip: 172.17.152.9
 
 === Monday 2022-11-07
 *Karl:* Worked on new chassis and schematic. (3h)
+*Markus:* Started building omnimotion. (3h)
 
 === Tuesday 2022-11-08
 *Karl:* Adjusted new thrower design so that ramp walls are closer together. Printed new wheels. Made modifications to thrower motor support piece. (5h)
@@ -165,6 +166,10 @@ static ip: 172.17.152.9
 
 === Wednesday 2022-11-09
 *Karl:* Worked on wheels and chassis design. Also did fixes on the schematic(4h)
+
+*Markus:* Worked on ball following orbiting and throwing (8h)
+
+*Kevin:* Worked on ball following orbiting and throwing (6h)
 
 === Thursday 2022-11-10
 *Markus:* Took part in 1st test competition. (4h)
