@@ -162,4 +162,14 @@ static ip: 172.17.152.9
 *Kevin:* Worked on omnimotion. (4h)
 
 *Markus:* Worked on omnimotion. (5h)
+
 === Wednesday 2022-11-09
+*Karl:* Worked on wheels and chassis design. Also did fixes on the schematic(4h)
+
+=== Thursday 2022-11-10
+*Markus:* Took part in 1st test competition. (4h)
+
+*Kevin:* Took part in 1st test competition. (4h)
+
+=== Sunday 2022-11-13
+*Karl:* Worked on schematic. (4h)
