@@ -6,11 +6,7 @@ Team members
 
 *Mechanics:* Karl Sander Vinkel, Kevin Kirbits
 
-*Programming:* Kevin Kirbits
-
-*Programming:* Markus Männil
-
-*Programming:* Arnold Leonhard Mertsin
+*Programming:* Kevin Kirbits, Markus Männil, Arnold Leonhard Mertsin
 
 == External Links
 
@@ -145,7 +141,7 @@ static ip: 172.17.152.9
 === Tuesday 2022-11-01
 *Markus:* Worked on fine tuning movement. (2h)
 
-*Kar:* Worked on two different omniwheel designs, one with 3D printed large rollers and one with small metal rollers. Will discuss which option to further pursue. (2h)
+*Karl:* Worked on two different omniwheel designs, one with 3D printed large rollers and one with small metal rollers. Will discuss which option to further pursue. (2h)
 
 === Friday 2022-11-04
 *Karl:* Finished wheel design revision. Finished motor mount and camera mount (top and bottom plates are about 80% complete for initial design). Will get measurements for batteries and thrower voltage regulator over the weekend. Will also start work on an updated thrower design (current throw angle is a bit too steep). Completed new chassis design to be expected by Monday. Will also work on finishing schematic over the weekend to start work on PCB by next week. Also had idea for fixed battery sockets but won't concentrate on those at this time. (7h)
@@ -181,3 +177,7 @@ static ip: 172.17.152.9
 
 === Monday 2022-11-14
 *Karl:* Fixed issues on schematic. (1h)
+
+*Arnold:* Progress presentation. (2h)
+
+*Markus:* Progress presentation. (2h)
