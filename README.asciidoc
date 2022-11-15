@@ -179,5 +179,3 @@ static ip: 172.17.152.9
 *Karl:* Fixed issues on schematic. (1h)
 
 *Arnold:* Progress presentation. (2h)
-
-*Markus:* Progress presentation. (2h)
