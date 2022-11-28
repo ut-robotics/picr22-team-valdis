@@ -179,3 +179,40 @@ static ip: 172.17.152.9
 *Karl:* Fixed issues on schematic. (1h)
 
 *Arnold:* Progress presentation. (2h)
+
+=== Tuesday 2022-11-15
+
+=== Wednesday 2022-11-16
+
+=== Thursday 2022-11-17
+
+=== Friday 2022-11-18
+*Karl:* Worked on PCB and chassis (4h)
+
+=== Saturday 2022-11-19
+*Karl:* Worked on PCB (3h)
+
+=== Sunday 2022-11-20
+*Karl:* Worked on PCB and chassis (4h)
+
+=== Monday 2022-11-21
+*Karl:* Worked on chassis design (3h)
+
+=== Tuesday 2022-11-22
+
+=== Wednesday 2022-11-23
+*Karl:* Worked on chassis design (3h)
+
+=== Thursday 2022-11-24
+*Karl:* Cut out 2/3 motor mounts (2h)
+
+=== Friday 2022-11-25
+
+
+=== Saturday 2022-11-26
+*Karl:* Worked on PCB (3h)
+
+=== Sunday 2022-11-27
+*Karl:* Worked on PCB (3h)
+
+=== Monday 2022-11-28
