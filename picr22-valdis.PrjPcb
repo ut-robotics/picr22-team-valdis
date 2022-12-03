@@ -80,7 +80,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=WQXGYGXV
 
 [Document3]
 DocumentPath=..\..\Documents\Altium\Library\Valdis components\FTSH-105-01-L-DV-K.SchLib
@@ -97,7 +97,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=JDAIONMW
 
 [Document4]
 DocumentPath=..\..\Documents\Altium\Library\Valdis components\MAX14930DASEplus.PcbLib
@@ -114,7 +114,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=RPPBCOKU
 
 [Document5]
 DocumentPath=..\..\Documents\Altium\Library\Valdis components\MAX14930DASEplus.SchLib
@@ -131,7 +131,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=SDAANZAX
 
 [Document6]
 DocumentPath=..\..\Documents\Altium\Library\Valdis components\NCP164CSN330T1G.PcbLib
@@ -148,7 +148,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=QZTRVPFK
 
 [Document7]
 DocumentPath=..\..\Documents\Altium\Library\Valdis components\NCP164CSN330T1G.SchLib
@@ -165,7 +165,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=TJHHYRXQ
 
 [Document8]
 DocumentPath=..\..\Documents\Altium\Library\Valdis components\NCV8730ASN500T1G.SchLib
@@ -182,7 +182,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=KSTHEWNT
 
 [Document9]
 DocumentPath=mcu_valdis1.SchDoc
@@ -268,6 +268,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OPMKGOJR
+
+[Document14]
+DocumentPath=Valdis components\Project Outputs for Valdis_Components\Valdis_Components\Project Outputs for Valdis_Components\Project Outputs for Valdis_Components\Valdis_Components.IntLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
 
 [Configuration1]
 Name=Sources
