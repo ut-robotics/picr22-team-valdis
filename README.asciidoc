@@ -180,12 +180,6 @@ static ip: 172.17.152.9
 
 *Arnold:* Progress presentation. (2h)
 
-=== Tuesday 2022-11-15
-
-=== Wednesday 2022-11-16
-
-=== Thursday 2022-11-17
-
 === Friday 2022-11-18
 *Karl:* Worked on PCB and chassis (4h)
 
@@ -198,18 +192,13 @@ static ip: 172.17.152.9
 === Monday 2022-11-21
 *Karl:* Worked on chassis design (3h)
 
-=== Tuesday 2022-11-22
-
 === Wednesday 2022-11-23
 *Karl:* Worked on chassis design (3h)
-*Markus:* Worked on robot code (4h)
 
+*Markus:* Worked on robot code (4h)
 
 === Thursday 2022-11-24
 *Karl:* Cut out 2/3 motor mounts (2h)
-
-=== Friday 2022-11-25
-
 
 === Saturday 2022-11-26
 *Karl:* Worked on PCB (3h)
@@ -218,3 +207,30 @@ static ip: 172.17.152.9
 *Karl:* Worked on PCB (3h)
 
 === Monday 2022-11-28
+*Kevin:* Milled new wheel adapters. (3h)
+
+*Arnold:* Progress presentation. (2h)
+
+=== Wednesday 2022-11-30
+*Karl:* Printed rear walls for new robot. (3h)
+
+*Kevin:* Cleaned up new wheel adapters for use. (3h)
+
+*Markus:* Worked on refactoring code. (2h)
+
+=== Thursday 2022-12-01
+*Karl:* Worked on PCB (3h)
+
+*Arnold:* Threaded wheel adapters (2h)
+
+=== Saturday 2022-12-02
+*Karl:* Worked on PCB (4h)
+
+=== Sunday 2022-12-03
+*Karl:* Finished PCB, generated Gerber files for ordering. Made manufacturing files for chassis. (4h)
+
+*Kevin:* Worked on referee application (4h)
+
+*Markus:* Worked on referee application (4h)
+
+*Arnold:* Worked on referee application (4h)
