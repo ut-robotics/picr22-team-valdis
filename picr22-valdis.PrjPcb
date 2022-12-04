@@ -236,23 +236,6 @@ GenerateClassCluster=0
 DocumentUniqueId=KWVGNVWJ
 
 [Document12]
-DocumentPath=ValdisPCB.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=FQKVRCYS
-
-[Document13]
 DocumentPath=PCB1.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -269,7 +252,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OPMKGOJR
 
-[Document14]
+[Document13]
 DocumentPath=Valdis components\Project Outputs for Valdis_Components\Valdis_Components\Project Outputs for Valdis_Components\Project Outputs for Valdis_Components\Valdis_Components.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -286,7 +269,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document15]
+[Document14]
 DocumentPath=CAMtastic1.Cam
 AnnotationEnabled=1
 AnnotateStartValue=1
