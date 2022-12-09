@@ -234,3 +234,6 @@ static ip: 172.17.152.9
 *Markus:* Worked on referee application (4h)
 
 *Arnold:* Worked on referee application (4h)
+
+=== Wednesday 2022-12-07
+*Karl:* Cut out new chassis components and started assembly proccess (6h)
