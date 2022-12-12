@@ -237,3 +237,13 @@ static ip: 172.17.152.9
 
 === Wednesday 2022-12-07
 *Karl:* Cut out new chassis components and started assembly proccess (6h)
+
+=== Friday 2022-12-09
+*Karl:* Cleaned and assembled new chassis. (5h)
+
+*Markus:* Cleaned and assembled new chassis. (5h)
+
+=== Sunday 2022-12-11
+*Karl:* Fitted old electronics into new chassis. (1h)
+
+*Markus:* Started refactoring code for new dimensions. (1h)
