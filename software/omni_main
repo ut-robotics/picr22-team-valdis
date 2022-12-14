@@ -6,161 +6,142 @@ import time
 from enum import Enum
 from motion import SerialOmniMotion
 
+
 class Machine_state(Enum):
-    FIND_BALL = 1 # ---> ball found 
-    MOVE_TO_BALL = 2 # ---> ball in optimal pos
-    ORBIT_BALL = 3 # (right) ---> Orbit ball till aligned with Right Basket or ball not in optimal pos
-    ORBIT_BALL_LEFT = 4 # kui on korvi näha vasakul
-    ORBIT_BALL_RIGHT = 5 # kui on korvi näha paremal
-    THROW_BALL = 6 # ---> run ball throwing
+    FIND_BALL = 1  # ---> ball found 
+    MOVE_TO_BALL = 2  # ---> ball in optimal pos
+    ORBIT_BALL = 3  # (right) ---> Orbit ball till aligned with Right Basket or ball not in optimal pos
+    ORBIT_BALL_LEFT = 4  # kui on korvi näha vasakul
+    ORBIT_BALL_RIGHT = 5  # kui on korvi näha paremal
+    THROW_BALL = 6  # ---> run ball throwing
     # let it be for now
-    
 
 
-
-
-#sudo chmod a=rwx /dev/ttyACM0
+# sudo chmod a=rwx /dev/ttyACM0
 def main_loop():
     debug = False
     # 0 - magenta 1 -blue
     print("[RUNNING]")
     # default first thing find ball
-    #camera instance for normal web cameras
-    #cam = camera.OpenCVCamera(id = 2)
+    # camera instance for normal web cameras
+    # cam = camera.OpenCVCamera(id = 2)
     # camera instance for realsense cameras
-    cam = camera.RealsenseCamera(exposure = 100)
+    cam = camera.RealsenseCamera(exposure=100)
     processor = image_processor.ImageProcessor(cam, debug=debug)
     processor.start()
-    start = time.time()
-    fps = 0
     frame = 0
     frame_cnt = 0
-    STATE = Machine_state.FIND_BALL
-    move = SerialOmniMotion() # opens itself
+    state = Machine_state.FIND_BALL
+    move = SerialOmniMotion()  # opens itself
     throw_time = -1
     try:
         while True:
-            
+
             # if signal == start (continue)
             # else break
             # has argument aligned_depth that enables depth frame to color frame alignment. Costs performance
-            if STATE is Machine_state.THROW_BALL:
+            if state is Machine_state.THROW_BALL:
                 processedData = processor.process_frame(aligned_depth=True)
             else:
                 processedData = processor.process_frame(aligned_depth=False)
-            basket = processedData.basket_m # praegu hard code 
+                
+            basket = processedData.basket_b
+            # praegu hard code 
             # This is where you add the driving behaviour of your robot. It should be able to filter out
             # objects of interest and calculate the required motion for reaching the objects
 
-            frame_cnt +=1
+            if state is not Machine_state.THROW_BALL:
+                throw_time = -1
 
-            frame += 1
-            if frame % 7 == 0:
-                frame = 0
-                end = time.time()
-                fps = 30 / (end - start)
-                start = end
-                print("___")
-                print(" ")
-                print("FPS: {}, framecount: {}".format(fps, frame_cnt))
-                
-                
-                
-                if(STATE is Machine_state.THROW_BALL and throw_time == -1):
-                    print("STARTING THROWING MODE!")
-                    throw_time = time.time()
-            
-                
-                if(STATE is Machine_state.THROW_BALL and throw_time != -1 and throw_time + 1 > time.time()):
-                    print("STAYING IN THROW", throw_time+2 , time.time())
-                    STATE = Machine_state.THROW_BALL
-                
-                elif len(processedData.balls) > 0:
-                    # on pall
-                    ball = processedData.balls[-1]
-                    if STATE is Machine_state.FIND_BALL or STATE is Machine_state.MOVE_TO_BALL or STATE is Machine_state.THROW_BALL:
-                        STATE = Machine_state.MOVE_TO_BALL
-                    # kui pall õiges kohas 
-                    if (ball.x > 415 and ball.x < 445 and ball.y < 440 and ball.y > 410) or (STATE is Machine_state.ORBIT_BALL \
-                            or STATE is Machine_state.ORBIT_BALL_LEFT or STATE is Machine_state.ORBIT_BALL_RIGHT):
-                        #print(basket.exists,"basket")
-                        if basket.exists == 0:
-                            print()
-                            STATE = Machine_state.ORBIT_BALL
-                        # orbit ball
-                        if basket.exists: 
-                            #print(basket.x ," BASKET X")
-                            if basket.x > 440:    # orb
-                                STATE = Machine_state.ORBIT_BALL_LEFT
-                            elif basket.x < 400 :
-                                STATE = Machine_state.ORBIT_BALL_RIGHT
-                            elif basket.x < 440 and basket.x > 400: 
-                                STATE = Machine_state.THROW_BALL
-                    #print(ball.x ,STATE, "FUCK")
-                    
-                else:
-                    # otsi palli
-                    STATE = Machine_state.FIND_BALL
-                #print(processedData.basket_b.x ,"BASKET")
-                #move = SerialOmniMotion() # opens itself
-                #Hakkame keerama ennast, et otsida palle.
-                
-                # kui oleme jõudnud throw ball state-i
-                # save time
-                # for the next quarter second set state THROW_BALL
-                if STATE is not Machine_state.THROW_BALL:
-                    throw_time = -1
+            if state is Machine_state.FIND_BALL:
+                print("STATE", state)
+                move.spin(-1.7)
+            # Kui me leiame palli, mis on lähim, siis võrdleme neid oma seatud parameetritega ja liigume selle poole
+            elif state is Machine_state.MOVE_TO_BALL:
+                print(ball.y, " Y")
+                print(ball.x, " X")
 
-                
-                if STATE is Machine_state.FIND_BALL :
-                    print("STATE",STATE)
-                    move.spin(-1.7)
-                #Kui me leiame palli, mis on lähim, siis võrdleme neid oma seatud parameetritega ja liigume selle poole
-                elif STATE is Machine_state.MOVE_TO_BALL:
-                    print(ball.y," Y")
-                    print(ball.x," X")
-                    
-                    print("State",STATE)
-                    move.move_ing(ball.x,ball.y)
-                #Orbitib palli, kui on leidnud ülesse, milline on talle kõige lähemal on ja hakkame korvi otsima
-                elif STATE is Machine_state.ORBIT_BALL:
-                    print(ball.y," Y")
-                    print(ball.x," X")
-                    print('State',STATE)
-                    move.orbit(-1)
-                # Kui korv on meist paremale poole orbitime tollele poole
-                elif STATE is Machine_state.ORBIT_BALL_LEFT:
-                    print(ball.y ," Y")
-                    print(ball.x," X")
-                    
-                    print('State',STATE)
-                    move.orbit(-0.5)
-                #Kui korv on meist vasakule orbitime tollele poole
-                elif STATE is Machine_state.ORBIT_BALL_RIGHT:
-                    print(ball.y, " Y")
-                    print(ball.x," X")
-                
-                    print('State',STATE)
-                    move.orbit(0.5)
-                #Kui oleme ennast sättinud heasse positsiooni korvi suhtes, siis viskame
-                elif STATE is Machine_state.THROW_BALL:
-                    print(ball.y, " Y")
-                    print(ball.x, " X")
-                    print('State',STATE)
-                    print(basket.distance," distance")
-                    move.thro_shit(basket.distance)
-                    
-                    #move.send_to_robot(0,1,0,sped)
+                print("State", state)
+                move.move_robot(ball.x, ball.y)
+            # Orbitib palli, kui on leidnud ülesse, milline on talle kõige lähemal on ja hakkame korvi otsima
+            elif state is Machine_state.ORBIT_BALL:
+                print(ball.y, " Y")
+                print(ball.x, " X")
+                print('State', state)
+                move.orbit(-1)
+            # Kui korv on meist paremale poole orbitime tollele poole
+            elif state is Machine_state.ORBIT_BALL_LEFT:
+                print(ball.y, " Y")
+                print(ball.x, " X")
+
+                print('State', state)
+                move.orbit(-0.5)
+            # Kui korv on meist vasakule orbitime tollele poole
+            elif state is Machine_state.ORBIT_BALL_RIGHT:
+                print(ball.y, " Y")
+                print(ball.x, " X")
+
+                print('State', state)
+                move.orbit(0.5)
+            # Kui oleme ennast sättinud heasse positsiooni korvi suhtes, siis viskame
+            elif state is Machine_state.THROW_BALL:
+                print(ball.y, " Y")
+                print(ball.x, " X")
+                print('State', state)
+                print(basket.distance, " distance")
+                move.throw_ball(basket.distance)
+
+                # move.send_to_robot(0,1,0,sped)
             
-                            
-                
+            if state is Machine_state.THROW_BALL and throw_time == -1:
+                print("STARTING THROWING MODE!")
+                throw_time = time.time()
+
+            if state is Machine_state.THROW_BALL and throw_time != -1 and throw_time + 1 > time.time():
+                print("STAYING IN THROW", throw_time + 2, time.time())
+                state = Machine_state.THROW_BALL
+
+            elif len(processedData.balls) > 0:
+                # on pall
+                ball = processedData.balls[-1]
+                if state is Machine_state.FIND_BALL or state is Machine_state.MOVE_TO_BALL or state is Machine_state.THROW_BALL:
+                    state = Machine_state.MOVE_TO_BALL
+                # kui pall õiges kohas 
+                if (ball.x > 415 and ball.x < 445 and ball.y < 440 and ball.y > 410) or (
+                        state is Machine_state.ORBIT_BALL or state is Machine_state.ORBIT_BALL_LEFT or
+                        state is Machine_state.ORBIT_BALL_RIGHT):
+                    # print(basket.exists,"basket")
+                    if basket.exists == 0:
+                        print()
+                        state = Machine_state.ORBIT_BALL
+                    # orbit ball
+                    if basket.exists:
+                        # print(basket.x ," BASKET X")
+                        if basket.x > 440: 
+                            state = Machine_state.ORBIT_BALL_LEFT
+                        elif basket.x < 400:
+                            state = Machine_state.ORBIT_BALL_RIGHT
+                        elif basket.x < 440 and basket.x > 400:
+                            state = Machine_state.THROW_BALL
+
+            else:
+                # otsi palli
+                state = Machine_state.FIND_BALL
+            
+            # print(processedData.basket_b.x ,"BASKET")
+            # move = SerialOmniMotion() # opens itself
+            # Hakkame keerama ennast, et otsida palle.
+
+            # kui oleme jõudnud throw ball state-i
+            # save time
+            # for the next quarter second set state THROW_BAL
             if debug:
                 debug_frame = processedData.debug_frame
                 cv2.imshow('debug', debug_frame)
                 k = cv2.waitKey(1) & 0xff
                 if k == ord('q'):
-                    
                     break
+                
         move.close()
     except KeyboardInterrupt:
         print("losing....")
@@ -168,14 +149,8 @@ def main_loop():
         cv2.destroyAllWindows()
         move.close()
         processor.stop()
-
-
-
-
-
-
 print("homer")
 main_loop()
-i =SerialOmniMotion()
-i.send_to_robot(0,0,0,0)
+i = SerialOmniMotion()
+i.send_to_robot(0, 0, 0, 0)
 i.close

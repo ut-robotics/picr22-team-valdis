@@ -120,7 +120,7 @@ class SerialOmniMotion():
         #print("WE BOUT TO DO SPINN")
         self.send_to_robot(0.16 * speed,0,speed)
         
-    def thro_shit(self,dist):
+    def throw_ball(self,dist):
         dist = dist-100
         if(dist < 550):
             sped = 800
@@ -132,7 +132,7 @@ class SerialOmniMotion():
         self.send_to_robot(0,0.75,0,int(sped))
         
     
-    def move_ing(self, x_cord, y_cord):
+    def move_robot(self, x_cord, y_cord):
         print()
         le_x = 0
         le_y = 0
