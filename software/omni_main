@@ -26,6 +26,9 @@ def main_loop():
     # camera instance for normal web cameras
     # cam = camera.OpenCVCamera(id = 2)
     # camera instance for realsense cameras
+    
+    # CAMERA_WIDTH = 480
+    # CAMERA_HEIGHT = 848
     cam = camera.RealsenseCamera(exposure=100)
     processor = image_processor.ImageProcessor(cam, debug=debug)
     processor.start()
@@ -36,7 +39,9 @@ def main_loop():
     throw_time = -1
     try:
         while True:
-
+            
+            
+            
             # if signal == start (continue)
             # else break
             # has argument aligned_depth that enables depth frame to color frame alignment. Costs performance
@@ -54,34 +59,23 @@ def main_loop():
                 throw_time = -1
 
             if state is Machine_state.FIND_BALL:
-                print("STATE", state)
+                
                 move.spin(-1.7)
             # Kui me leiame palli, mis on lähim, siis võrdleme neid oma seatud parameetritega ja liigume selle poole
             elif state is Machine_state.MOVE_TO_BALL:
-                print(ball.y, " Y")
-                print(ball.x, " X")
-
-                print("State", state)
+                
                 move.move_robot(ball.x, ball.y)
             # Orbitib palli, kui on leidnud ülesse, milline on talle kõige lähemal on ja hakkame korvi otsima
             elif state is Machine_state.ORBIT_BALL:
-                print(ball.y, " Y")
-                print(ball.x, " X")
-                print('State', state)
+                
                 move.orbit(-1)
             # Kui korv on meist paremale poole orbitime tollele poole
             elif state is Machine_state.ORBIT_BALL_LEFT:
-                print(ball.y, " Y")
-                print(ball.x, " X")
-
-                print('State', state)
+                
                 move.orbit(-0.5)
             # Kui korv on meist vasakule orbitime tollele poole
             elif state is Machine_state.ORBIT_BALL_RIGHT:
-                print(ball.y, " Y")
-                print(ball.x, " X")
-
-                print('State', state)
+                
                 move.orbit(0.5)
             # Kui oleme ennast sättinud heasse positsiooni korvi suhtes, siis viskame
             elif state is Machine_state.THROW_BALL:
@@ -89,6 +83,7 @@ def main_loop():
                 print(ball.x, " X")
                 print('State', state)
                 print(basket.distance, " distance")
+                print(basket.x)
                 move.throw_ball(basket.distance)
 
                 # move.send_to_robot(0,1,0,sped)
@@ -107,22 +102,27 @@ def main_loop():
                 if state is Machine_state.FIND_BALL or state is Machine_state.MOVE_TO_BALL or state is Machine_state.THROW_BALL:
                     state = Machine_state.MOVE_TO_BALL
                 # kui pall õiges kohas 
-                if (ball.x > 415 and ball.x < 445 and ball.y < 440 and ball.y > 410) or (
+                # ToDO make those values depend on a CAMERA_WIDTH and CAMERA_HEIGHT
+                # kas see oleks parem ? -> 
+                # if (ball.x > CAMERA_WIDTH/2 - 9 and ball.x < CAMERA_WIDTH/2 +21  and ball.y < CAMERA_HEIGHT - 40 and ball.y > CAMERA_HEIGHT-70)
+                if (ball.x > 425 and ball.x < 445  and ball.y < 440 and ball.y > 410) or (
                         state is Machine_state.ORBIT_BALL or state is Machine_state.ORBIT_BALL_LEFT or
                         state is Machine_state.ORBIT_BALL_RIGHT):
                     # print(basket.exists,"basket")
                     if basket.exists == 0:
-                        print()
                         state = Machine_state.ORBIT_BALL
                     # orbit ball
+                    # ToDO make those values depend on a CAMERA_WIDTH and CAMERA_HEIGHT
                     if basket.exists:
-                        # print(basket.x ," BASKET X")
-                        if basket.x > 440: 
+                        if basket.x > 430: 
                             state = Machine_state.ORBIT_BALL_LEFT
-                        elif basket.x < 400:
+                        elif basket.x < 410:
                             state = Machine_state.ORBIT_BALL_RIGHT
-                        elif basket.x < 440 and basket.x > 400:
+                        elif basket.x < 430 and basket.x > 410:
                             state = Machine_state.THROW_BALL
+                            move.send_to_robot(0,0,0,0)
+                            if not (ball.x > 425 and ball.x < 445  and ball.y < 440 and ball.y > 410):
+                                state = Machine_state.MOVE_TO_BALL
 
             else:
                 # otsi palli
@@ -131,10 +131,6 @@ def main_loop():
             # print(processedData.basket_b.x ,"BASKET")
             # move = SerialOmniMotion() # opens itself
             # Hakkame keerama ennast, et otsida palle.
-
-            # kui oleme jõudnud throw ball state-i
-            # save time
-            # for the next quarter second set state THROW_BAL
             if debug:
                 debug_frame = processedData.debug_frame
                 cv2.imshow('debug', debug_frame)
