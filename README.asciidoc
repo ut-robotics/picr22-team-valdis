@@ -247,3 +247,9 @@ static ip: 172.17.152.9
 *Karl:* Fitted old electronics into new chassis. (1h)
 
 *Markus:* Started refactoring code for new dimensions. (1h)
+
+== Tuesday 2022-12-13 
+*Markus:* Worked on adabting code on new robot (4h)
+
+== Wednesday  2022-12-14 
+*Markus:* Worked on adabting code on new robot and fiksing minor issues with robot (10h)
