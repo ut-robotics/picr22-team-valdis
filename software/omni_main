@@ -52,7 +52,10 @@ def main_loop():
             else:
                 processedData = processor.process_frame(aligned_depth=False)
                 
-            basket = processedData.basket_m
+            if(side[1] is Side.MAGENTA):
+                basket = processedData.basket_m 
+            if(side[1] is Side.BLUE):
+                basket = processedData.basket_b 
             # praegu hard code 
             # This is where you add the driving behaviour of your robot. It should be able to filter out
             # objects of interest and calculate the required motion for reaching the objects
@@ -108,7 +111,7 @@ def main_loop():
                 # ToDO make those values depend on a CAMERA_WIDTH and CAMERA_HEIGHT
                 # kas see oleks parem ? -> 
                 # if (ball.x > CAMERA_WIDTH/2 - 9 and ball.x < CAMERA_WIDTH/2 +21  and ball.y < CAMERA_HEIGHT - 40 and ball.y > CAMERA_HEIGHT-70)
-                if (ball.x > 415 and ball.x < 445  and ball.y < 440 and ball.y > 410) or (
+                if (ball.x > 0.489 * CAMERA_WIDTH and ball.x < 0.524 * CAMERA_WIDTH  and ball.y < 0.91 * CAMERA_HEIGHT and ball.y > 0.854 * CAMERA_HEIGHT) or (
                         state is Machine_state.ORBIT_BALL or state is Machine_state.ORBIT_BALL_LEFT or
                         state is Machine_state.ORBIT_BALL_RIGHT):
                     # print(basket.exists,"basket")
@@ -117,19 +120,19 @@ def main_loop():
                     # orbit ball
                     # ToDO make those values depend on a CAMERA_WIDTH and CAMERA_HEIGHT
                     if basket.exists:
-                        if basket.x > 430: 
+                        if basket.x > 0.5 * CAMERA_WIDTH: 
                             state = Machine_state.ORBIT_BALL_LEFT
-                        elif basket.x < 410:
+                        elif basket.x < 0.483 * CAMERA_WIDTH:
                             state = Machine_state.ORBIT_BALL_RIGHT
-                        elif basket.x < 430 and basket.x > 410:
+                        elif basket.x < 0.5 * CAMERA_WIDTH and basket.x >  0.483 * CAMERA_WIDTH:
                             state = Machine_state.THROW_BALL
                             move.send_to_robot(0,0,0,0)
-                            if not (ball.x > 425 and ball.x < 445  and ball.y < 440 and ball.y > 410):
+                            if not (ball.x > 0.489 * CAMERA_WIDTH and ball.x < 0.524 * CAMERA_WIDTH  and ball.y < 0.91 * CAMERA_HEIGHT and ball.y > 0.854 * CAMERA_HEIGHT):
                                 state = Machine_state.MOVE_TO_BALL
 
             elif begin_boolean:
                 move.spin(1.2)
-                if basket.exists and (basket.x < 600 or basket.x > 200 ):
+                if basket.exists and (basket.x < 0.7 * CAMERA_WIDTH or basket.x > 0.413 * CAMERA_WIDTH ):
                     move.send_to_robot(0,1,0,0)
             else:
                 # otsi palli
@@ -155,42 +158,6 @@ def main_loop():
         processor.stop()
         
         
-def move_robot(x_cord, y_cord,move):
-    le_x = 0
-    le_y = 0
-    
-    
-    # x middle u 420 - 440 for now
-    # y 400 - 360
-    #print(x_cord,"x")
-    if x_cord < 415:
-        #print (x_cord - 415, "x_offset")
-        # testimisel ->  offset / 500 = x to ask 
-        le_x = (x_cord-415)/600
-        le_x = min(-0.075,le_x)
-        
-    elif x_cord > 445:  
-        #print( x_cord- 445, "x_offset")
-        le_x = (x_cord-445)/600
-        le_x = max(0.075,le_x)
-
-    #print(y_cord,"y")  
-    if y_cord > 440:
-        #(" move back")
-        le_y = (440 - y_cord)
-        #print(le_y ,"y offset")
-        le_y = le_y / 400
-        le_y = min(-0.075,le_y)
-    elif y_cord < 410:
-        #print(" move forward")
-        le_y = (410 - y_cord)
-        #print (le_y,"y offset")
-        le_y = le_y / 400
-        le_y = max(0.075,le_y)
-
-            
-    # print(le_x,le_y,le_r ,"WHAT SEND")
-    move.send_to_robot(le_x,le_y,0)
     
     
 print("homer")

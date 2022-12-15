@@ -43,19 +43,16 @@ def main_loop(side):
     throw_time = -1
     begin_boolean = True
     state = Machine_state.FIND_BALL
-    if(side is Side.MAGENTA):
-        basket = processedData.basket_m 
-    if(side is Side.BLUE):
-        basket = processedData.basket_b 
     
+    CAMERA_WIDTH = cam.rgb_width
+    CAMERA_HEIGHT = cam.rgb_height
     child, parent = Pipe()
-    move = SerialOmniMotion()
+    move = SerialOmniMotion(CAMERA_WIDTH,CAMERA_HEIGHT)
     ref_status = True
     pp = Process(target = refclient,args =(child,))    
     pp.start()
     try:
         while True:
-            processedData = processor.process_frame(aligned_depth=False)
             if not pp.is_alive():
                 if parent.recv()[0]:  # --> kas siganl on true
                     ref_status = True
@@ -76,6 +73,10 @@ def main_loop(side):
                 else:
                     processedData = processor.process_frame(aligned_depth=False)
                     
+                if(side[1] is Side.MAGENTA):
+                    basket = processedData.basket_m 
+                if(side[1] is Side.BLUE):
+                    basket = processedData.basket_b 
                 # praegu hard code 
                 # This is where you add the driving behaviour of your robot. It should be able to filter out
                 # objects of interest and calculate the required motion for reaching the objects
@@ -131,7 +132,7 @@ def main_loop(side):
                     # ToDO make those values depend on a CAMERA_WIDTH and CAMERA_HEIGHT
                     # kas see oleks parem ? -> 
                     # if (ball.x > CAMERA_WIDTH/2 - 9 and ball.x < CAMERA_WIDTH/2 +21  and ball.y < CAMERA_HEIGHT - 40 and ball.y > CAMERA_HEIGHT-70)
-                    if (ball.x > 415 and ball.x < 445  and ball.y < 440 and ball.y > 410) or (
+                    if (ball.x > 0.489 * CAMERA_WIDTH and ball.x < 0.524 * CAMERA_WIDTH  and ball.y < 0.91 * CAMERA_HEIGHT and ball.y > 0.854 * CAMERA_HEIGHT) or (
                             state is Machine_state.ORBIT_BALL or state is Machine_state.ORBIT_BALL_LEFT or
                             state is Machine_state.ORBIT_BALL_RIGHT):
                         # print(basket.exists,"basket")
@@ -140,19 +141,19 @@ def main_loop(side):
                         # orbit ball
                         # ToDO make those values depend on a CAMERA_WIDTH and CAMERA_HEIGHT
                         if basket.exists:
-                            if basket.x > 430: 
+                            if basket.x > 0.5 * CAMERA_WIDTH: 
                                 state = Machine_state.ORBIT_BALL_LEFT
-                            elif basket.x < 410:
+                            elif basket.x < 0.483 * CAMERA_WIDTH:
                                 state = Machine_state.ORBIT_BALL_RIGHT
-                            elif basket.x < 430 and basket.x > 410:
+                            elif basket.x < 0.5 * CAMERA_WIDTH and basket.x >  0.483 * CAMERA_WIDTH:
                                 state = Machine_state.THROW_BALL
                                 move.send_to_robot(0,0,0,0)
-                                if not (ball.x > 425 and ball.x < 445  and ball.y < 440 and ball.y > 410):
+                                if not (ball.x > 0.489 * CAMERA_WIDTH and ball.x < 0.524 * CAMERA_WIDTH  and ball.y < 0.91 * CAMERA_HEIGHT and ball.y > 0.854 * CAMERA_HEIGHT):
                                     state = Machine_state.MOVE_TO_BALL
 
                 elif begin_boolean:
                     move.spin(1.2)
-                    if basket.exists and (basket.x < 600 or basket.x > 200 ):
+                    if basket.exists and (basket.x < 0.7 * CAMERA_WIDTH or basket.x > 0.413 * CAMERA_WIDTH ):
                         move.send_to_robot(0,1,0,0)
                 else:
                     # otsi palli
@@ -191,7 +192,7 @@ async def refcommClient(signal):
 
                     elif refdict['baskets'][refdict['targets'].index(robotName)] == 'magenta':
                         # attackingSide.value = Side.pink
-                        signal.value([True, Side.MAGENTA])
+                        signal.send([True, Side.MAGENTA])
                         signal.close()
                         break
                         
@@ -219,6 +220,6 @@ if __name__ == '__main__':
     p.start()
     print("Procces started")
     p.join()
-    main_loop(parent.recv()[1])
+    main_loop(parent.recv())
     print("SLEEP")
             

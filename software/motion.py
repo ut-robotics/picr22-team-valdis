@@ -8,11 +8,13 @@ import serial.tools.list_ports
 
 
 class SerialOmniMotion():
-    def __init__(self):
+    def __init__(self,camera_width,camera_height):
         self.wheel_angle = list(np.radians([120, 0, 240]))
         self.dist_center = 0.125
         self.wheel_speed_to_mpu = 59 # EPIC CALCULATION
         self.SEND_STRUCT = '<hhhHBH'
+        self.CAMERA_WIDTH = camera_width
+        self.CAMERA_HEIGHT = camera_height
         self.open()
     
     def open(self):
@@ -41,34 +43,34 @@ class SerialOmniMotion():
     def move_robot(self, x_cord, y_cord):
         le_x = 0
         le_y = 0
-        le_r = 0
+
         # x middle u 420 - 440 for now
         # y 400 - 360
         #print(x_cord,"x")
-        if x_cord < 415:
+        if x_cord < 0.489 * self.CAMERA_WIDTH:
             #print (x_cord - 415, "x_offset")
             # testimisel ->  offset / 500 = x to ask 
-            le_x = (x_cord-415)/600
+            le_x = (x_cord-0.489 * self.CAMERA_WIDTH)/600
             le_x = min(-0.075,le_x)
             le_r = -0.5
             
-        elif x_cord > 445:  
+        elif x_cord > 0.524 * self.CAMERA_WIDTH :  
             #print( x_cord- 445, "x_offset")
-            le_x = (x_cord-445)/600
+            le_x = (x_cord - 0.524 * self.CAMERA_WIDTH)/600
             le_x = max(0.075,le_x)
             le_r = 0.5
     
         
         #print(y_cord,"y")  
-        if y_cord > 440:
+        if y_cord >  0.91 * self.CAMERA_HEIGHT:
             #(" move back")
-            le_y = (440 - y_cord)
+            le_y = ( 0.91 * self.CAMERA_HEIGHT - y_cord)
             #print(le_y ,"y offset")
             le_y = le_y / 400
             le_y = min(-0.075,le_y)
-        elif y_cord < 410:
+        elif y_cord < 0.854 * self.CAMERA_HEIGHT:
             #print(" move forward")
-            le_y = (410 - y_cord)
+            le_y = (0.854 * self.CAMERA_HEIGHT - y_cord)
             #print (le_y,"y offset")
             le_y = le_y / 400
             le_y = max(0.075,le_y)
