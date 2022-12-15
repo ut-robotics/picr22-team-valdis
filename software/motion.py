@@ -3,10 +3,10 @@ import numpy as np
 import serial
 import struct
 import math
+import serial.tools.list_ports
 
-SEND_STRUCT = '<hhhHBH'
-RCV_STRUCT = '<hhhhB'
-    
+
+
 class SerialOmniMotion():
     def __init__(self):
         self.wheel_angle = list(np.radians([120, 0, 240]))
@@ -17,7 +17,10 @@ class SerialOmniMotion():
     
     def open(self):
         global ser
-        ser = serial.Serial('/dev/ttyACM0', 115200, timeout=0.050)
+        ports = serial.tools.list_ports.comports()
+        port = "/dev/" +[port.name for port in ports][0]
+        
+        ser = serial.Serial(port, 115200, timeout=0.050)
         if not ser.isOpen():
             ser.open()
     def close(self):

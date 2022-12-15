@@ -54,7 +54,9 @@ class ProcessedResults():
 class ImageProcessor():
     def __init__(self, camera, color_config = "colors/colors.pkl", debug = False):
         self.camera = camera
-
+        # round kernel
+        self.kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(7,7))
+        
         self.color_config = color_config
         with open(self.color_config, 'rb') as conf:
             self.colors_lookup = pickle.load(conf)
@@ -79,6 +81,10 @@ class ImageProcessor():
         self.camera.close()
 
     def analyze_balls(self, t_balls, fragments) -> list:
+        
+        t_balls = cv2.dilate(t_balls,self.kernel)
+        t_balls = cv2.erode(t_balls,self.kernel)
+        
         contours, hierarchy = cv2.findContours(t_balls, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
         balls = []
@@ -90,7 +96,7 @@ class ImageProcessor():
 
             size = cv2.contourArea(contour)
 
-            if size < 30:
+            if size < 35:
                 continue
 
             x, y, w, h = cv2.boundingRect(contour)

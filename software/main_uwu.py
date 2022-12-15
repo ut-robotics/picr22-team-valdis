@@ -1,17 +1,15 @@
-from re import S
-
 import image_processor
 import camera
 import cv2
 import time
 from enum import Enum
+from motion import SerialOmniMotion
 
-from motion import SerialOmniMotion
 from multiprocessing import Process,Pipe
-from motion import SerialOmniMotion
 import websockets
 import asyncio
 import json
+
 from enums import *
 
 class Side(Enum):
@@ -41,10 +39,6 @@ def main_loop(side):
     cam = camera.RealsenseCamera(exposure = 100)
     processor = image_processor.ImageProcessor(cam, debug=debug)
     processor.start()
-    start = time.time()
-    fps = 0
-    frame = 0
-    frame_cnt = 0
     STATE = Machine_state.FIND_BALL
     if(side is Side.MAGENTA):
         basket = processedData.basket_m 
@@ -52,105 +46,32 @@ def main_loop(side):
         basket = processedData.basket_b 
     
     child, parent = Pipe()
-    p = Process(target = refclient,args =(child))    
-    p.start()
+    
+    ref_status = True
+    pp = Process(target = refclient,args =(child,))    
+    pp.start()
     try:
         while True:
-            if(not p.is_alive):
-                if parent.recv()[0]:
-                    print("Signal still True")
+            processedData = processor.process_frame(aligned_depth=False)
+            if not pp.is_alive():
+                if parent.recv()[0]:  # --> kas siganl on true
+                    ref_status = True
+                    print("Signal True")
+                    child, parent = Pipe()
                     pp = Process(target=refclient, args=(child,))
                     pp.start()
                 else:
-                    break
-            # if signal == start (continue)
-            # else break
-            # has argument aligned_depth that enables depth frame to color frame alignment. Costs performance
-            if STATE is Machine_state.THROW_BALL:
-                processedData = processor.process_frame(aligned_depth=True)
+                    ref_status = False
+                    print("Signal False")
+                    child, parent = Pipe()
+                    pp = Process(target=refclient, args=(child,))
+                    pp.start()
+                    
+            if(ref_status):
+                print("WORM")
             else:
-                processedData = processor.process_frame(aligned_depth=False)
-            # praegu hard code 
-            # This is where you add the driving behaviour of your robot. It should be able to filter out
-            # objects of interest and calculate the required motion for reaching the objects
-
-            frame_cnt +=1
-
-            frame += 1
-            if frame % 15 == 0:
-                frame = 0
-                end = time.time()
-                fps = 30 / (end - start)
-                start = end
-                #print("FPS: {}, framecount: {}".format(fps, frame_cnt))
-                if len(processedData.balls) > 0:
-                    # on pall
-                    ball = processedData.balls[-1]
-                    if STATE is Machine_state.FIND_BALL or STATE is Machine_state.MOVE_TO_BALL:
-                        STATE = Machine_state.MOVE_TO_BALL
-                    if (ball.x > 410 and ball.x < 450 and ball.y < 400 and ball.y > 340) or (STATE is Machine_state.ORBIT_BALL \
-                            or STATE is Machine_state.ORBIT_BALL_LEFT or STATE is Machine_state.ORBIT_BALL_RIGHT):
-                        print(basket.exists,"basket")
-                        if basket.exists == 0:
-                            print()
-                            STATE = Machine_state.ORBIT_BALL
-                        # orbit ball
-                        if basket.exists: 
-                            if basket.x > 450 :    # orb
-                                STATE = Machine_state.ORBIT_BALL_LEFT
-                            elif basket.x < 410 :
-                                STATE = Machine_state.ORBIT_BALL_RIGHT
-                            elif basket.x < 460 and basket.x > 410: # elif STATE is Machine_state.MOVE_TO_BALL: 
-                                STATE = Machine_state.THROW_BALL
-                    print(ball.x ,STATE, "FUCK")
-                    if STATE is Machine_state.THROW_BALL and ((ball.x < 415 or ball.x > 445) and ball.y < 400 ):
-                        STATE = Machine_state.FIND_BALL
-                else:
-                    # otsi palli
-                    STATE = Machine_state.FIND_BALL
-                print(processedData.basket_b.x ,"BASKET")
-                move = SerialOmniMotion() # opens itself
-                #Hakkame keerama ennast, et otsida palle.
-                
-                if STATE is not Machine_state.THROW_BALL:
-                    sped = -1
-                
-                
-                if STATE is Machine_state.FIND_BALL :
-                    print("STATE",STATE)
-                    move.spin(1.7)
-                #Kui me leiame palli, mis on lähim, siis võrdleme neid oma seatud parameetritega ja liigume selle poole
-                elif STATE is Machine_state.MOVE_TO_BALL:
-                    print("State",STATE)
-                    move.move_ing(ball.x,ball.y)
-                #Orbitib palli, kui on leidnud ülesse, milline on talle kõige lähemal on ja hakkame korvi otsima
-                elif STATE is Machine_state.ORBIT_BALL:
-                    print('State',STATE)
-                    move.orbit(-1)
-                # Kui korv on meist paremale poole orbitime tollele poole
-                elif STATE is Machine_state.ORBIT_BALL_LEFT:
-                    print('State',STATE)
-                    move.orbit(-0.4)
-                #Kui korv on meist vasakule orbitime tollele poole
-                elif STATE is Machine_state.ORBIT_BALL_RIGHT:
-                    print('State',STATE)
-                    move.orbit(0.4)
-                #Kui oleme ennast sättinud heasse positsiooni korvi suhtes, siis viskame
-                elif STATE is Machine_state.THROW_BALL:
-                    print('State',STATE)
-                    print(basket.distance," distance")
-                    move.thro_shit(basket.distance)
-                    
-                    #move.send_to_robot(0,1,0,sped)
-                            
-                move.close()
-            if debug:
-                debug_frame = processedData.debug_frame
-                cv2.imshow('debug', debug_frame)
-                k = cv2.waitKey(1) & 0xff
-                if k == ord('q'):
-                    
-                    break
+                print("wait")
+           
     except KeyboardInterrupt:
         print("losing....")
     finally:
@@ -163,32 +84,40 @@ def main_loop(side):
 
 async def refcommClient(signal):
     robotName = 'Valdis'
-    connectTo = 'ws://192.168.3.82:8220/'
+    connectTo = 'ws://172.17.153.255:8222'
+    print("going to connect with ws")
     async with websockets.connect(connectTo, ping_interval=None) as websocket:
-        refcomm = await websocket.recv()
-        print('Signal recieved...')
-        refdict = json.loads(refcomm)
-        print(refdict['targets'])
-        if refdict['signal'] == 'start':
-            print(refdict['baskets'])
+        print("going to while loop")
+        while True:
+            refcomm = await websocket.recv()
+            print('Signal recieved...')
+            refdict = json.loads(refcomm)
             if robotName in refdict['targets']:
                 if refdict['signal'] == 'start':
                     if refdict['baskets'][refdict['targets'].index(robotName)] == 'blue':
-                        signal.send([True,Side.BLUE])
-                        signal.end
-                        return
+                        # attackingSide.value = Side.blue
+                        signal.send([True, 'Blue'])
+                        signal.close()
+                        break
+                        
+
                     elif refdict['baskets'][refdict['targets'].index(robotName)] == 'magenta':
-                        signal.send([True,Side.MAGENTA])
-                        signal.end
-                        return
+                        # attackingSide.value = Side.pink
+                        signal.value([True, 'Magenta'])
+                        signal.close()
+                        break
+                        
+                    # robotState.value = State.automatic
                     print('Starting competition!')
-                
-            elif refdict['signal'] == 'stop':
-                print('Stopping competition!')
-                signal.send([False,""])
-                return
-        else:
-            print('Signal not directed at', robotName)
+
+                elif refdict['signal'] == 'stop':
+                    # robotState.value = State.remote
+                    signal.send([False, " "])
+                    signal.close()
+                    break
+
+            else:
+                print('Signal not directed at', robotName)
             
             
 def refclient(signal):
@@ -200,6 +129,7 @@ if __name__ == '__main__':
     child, parent = Pipe()
     p = Process(target = refclient, args=(child,))
     p.start()
+    print("Procces started")
     p.join()
     main_loop(parent.recv()[1])
     print("SLEEP")
