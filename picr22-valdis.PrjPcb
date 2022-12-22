@@ -66,125 +66,6 @@ GenerateClassCluster=0
 DocumentUniqueId=WKEXFVCC
 
 [Document2]
-DocumentPath=..\..\Documents\Altium\Library\Valdis components\BUK6Y10-30PX.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=WQXGYGXV
-
-[Document3]
-DocumentPath=..\..\Documents\Altium\Library\Valdis components\FTSH-105-01-L-DV-K.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=JDAIONMW
-
-[Document4]
-DocumentPath=..\..\Documents\Altium\Library\Valdis components\MAX14930DASEplus.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=RPPBCOKU
-
-[Document5]
-DocumentPath=..\..\Documents\Altium\Library\Valdis components\MAX14930DASEplus.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=SDAANZAX
-
-[Document6]
-DocumentPath=..\..\Documents\Altium\Library\Valdis components\NCP164CSN330T1G.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=QZTRVPFK
-
-[Document7]
-DocumentPath=..\..\Documents\Altium\Library\Valdis components\NCP164CSN330T1G.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=TJHHYRXQ
-
-[Document8]
-DocumentPath=..\..\Documents\Altium\Library\Valdis components\NCV8730ASN500T1G.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=KSTHEWNT
-
-[Document9]
 DocumentPath=mcu_valdis1.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -201,7 +82,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GURBCXYW
 
-[Document10]
+[Document3]
 DocumentPath=mcu_valdis2.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -218,7 +99,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=UJGGKAVC
 
-[Document11]
+[Document4]
 DocumentPath=mcu_valdis3.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -235,7 +116,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=KWVGNVWJ
 
-[Document12]
+[Document5]
 DocumentPath=PCB1.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -252,7 +133,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OPMKGOJR
 
-[Document13]
+[Document6]
 DocumentPath=Valdis components\Project Outputs for Valdis_Components\Valdis_Components\Project Outputs for Valdis_Components\Project Outputs for Valdis_Components\Valdis_Components.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -269,7 +150,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document14]
+[Document7]
 DocumentPath=CAMtastic1.Cam
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -285,58 +166,6 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
-
-[GeneratedDocument1]
-DocumentPath=..\..\..\..\vinke\Desktop\picr22-team-valdis-electronics\PCB1_Copper_Signal_1.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument2]
-DocumentPath=..\..\..\..\vinke\Desktop\picr22-team-valdis-electronics\PCB1_Copper_Signal_2.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument3]
-DocumentPath=..\..\..\..\vinke\Desktop\picr22-team-valdis-electronics\PCB1_Copper_Signal_Bot.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument4]
-DocumentPath=..\..\..\..\vinke\Desktop\picr22-team-valdis-electronics\PCB1_Copper_Signal_Top.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument5]
-DocumentPath=..\..\..\..\vinke\Desktop\picr22-team-valdis-electronics\PCB1_Legend_Bot.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument6]
-DocumentPath=..\..\..\..\vinke\Desktop\picr22-team-valdis-electronics\PCB1_Legend_Top.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument7]
-DocumentPath=..\..\..\..\vinke\Desktop\picr22-team-valdis-electronics\PCB1_NPTH_Drill.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument8]
-DocumentPath=..\..\..\..\vinke\Desktop\picr22-team-valdis-electronics\PCB1_Paste_Bot.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument9]
-DocumentPath=..\..\..\..\vinke\Desktop\picr22-team-valdis-electronics\PCB1_Paste_Top.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument10]
-DocumentPath=..\..\..\..\vinke\Desktop\picr22-team-valdis-electronics\PCB1_Profile.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument11]
-DocumentPath=..\..\..\..\vinke\Desktop\picr22-team-valdis-electronics\PCB1_PTH_Drill.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument12]
-DocumentPath=..\..\..\..\vinke\Desktop\picr22-team-valdis-electronics\PCB1_Soldermask_Bot.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument13]
-DocumentPath=..\..\..\..\vinke\Desktop\picr22-team-valdis-electronics\PCB1_Soldermask_Top.gbr
-DItemRevisionGUID=
 
 [Configuration1]
 Name=Sources
@@ -695,32 +524,26 @@ OutputDocumentPath4=
 OutputVariantName4=[No Variations]
 OutputDefault4=0
 PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType5=Export Project History
-OutputName5=Export Project History
+OutputType5=ReportHierarchy
+OutputName5=Report Project Hierarchy
 OutputDocumentPath5=
 OutputVariantName5=[No Variations]
 OutputDefault5=0
-PageOptions5=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType6=ReportHierarchy
-OutputName6=Report Project Hierarchy
+OutputType6=Script
+OutputName6=Script Output
 OutputDocumentPath6=
 OutputVariantName6=[No Variations]
 OutputDefault6=0
-OutputType7=Script
-OutputName7=Script Output
+OutputType7=SimpleBOM
+OutputName7=Simple BOM
 OutputDocumentPath7=
 OutputVariantName7=[No Variations]
 OutputDefault7=0
-OutputType8=SimpleBOM
-OutputName8=Simple BOM
+OutputType8=SinglePinNetReporter
+OutputName8=Report Single Pin Nets
 OutputDocumentPath8=
 OutputVariantName8=[No Variations]
 OutputDefault8=0
-OutputType9=SinglePinNetReporter
-OutputName9=Report Single Pin Nets
-OutputDocumentPath9=
-OutputVariantName9=[No Variations]
-OutputDefault9=0
 
 [OutputGroup7]
 Name=Other Outputs
