@@ -253,3 +253,23 @@ static ip: 172.17.152.9
 
 == Wednesday  2022-12-14 
 *Markus:* Worked on adabting code on new robot and fiksing minor issues with robot (10h)
+
+=== Wednesday 2022-12-21
+*Arnold:* Worked on installing the mainboard into the robot and debuging some power cable problems (2h)
+*Kevin:* Worked on installing the mainboard into the robot and debuging some power cable problems (2h)
+
+=== Thursday 2022-12-22
+*Arnold:* Worked on fixing the mainboard's software errors and bugs (4h)
+*Kevin:* Worked on fixing the mainboard's software errors and bugs (4h)
+
+=== Friday 2022-12-23
+*Arnold:* Worked on more siftware and debugging bad connection between the mainboard and the IDE (4h)
+*Kevin:* Worked on more siftware and debugging bad connection between the mainboard and the IDE (4h)
+
+=== Wednesday 2022-12-28
+*Arnold:* Fixing main code which was affected by the new software changes from the mainboard software (4.5h) 
+*Kevin:* Fixing main code which was affected by the new software changes from the mainboard software (4.5h)
+
+=== Thursday 2022-12-29
+*Arnold:* Worked on more fixes to the main code (3.5h)
+*Kevin:* Worked on more fixes to the main code (3.5h)
