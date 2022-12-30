@@ -248,14 +248,15 @@ static ip: 172.17.152.9
 
 *Markus:* Started refactoring code for new dimensions. (1h)
 
-== Tuesday 2022-12-13 
+=== Tuesday 2022-12-13 
 *Markus:* Worked on adabting code on new robot (4h)
 
-== Wednesday  2022-12-14 
+=== Wednesday  2022-12-14 
 *Markus:* Worked on adabting code on new robot and fiksing minor issues with robot (10h)
 
 === Wednesday 2022-12-21
 *Arnold:* Worked on installing the mainboard into the robot and debuging some power cable problems (2h)
+
 *Kevin:* Worked on installing the mainboard into the robot and debuging some power cable problems (2h)
 
 === Thursday 2022-12-22
