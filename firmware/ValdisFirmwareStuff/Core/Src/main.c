@@ -139,7 +139,7 @@ MotorInfo M3 = {
 	    };
 	volatile uint8_t isCommandReceived = 0;
 
-	int32_t clmp(int16_t val, int32_t minVal, int32_t maxVal){
+	int32_t clmp(int32_t val, int32_t minVal, int32_t maxVal){
 		if(val>maxVal){
 			return maxVal;
 		}
@@ -166,9 +166,6 @@ MotorInfo M3 = {
 	    if (command.delimiter == 0xAAAA) {
 	      isCommandReceived = 1;
 	    }
-	    if (command.delimiter == 0xBBBB) {
-	    	  		driverReset = 1;
-	    		}
 	  }
 	}
 
@@ -199,10 +196,6 @@ MotorInfo M3 = {
 			HAL_GPIO_WritePin(M3_DIR_A_GPIO_Port, M3_DIR_A_Pin, (pwmValue < 0) ? GPIO_PIN_SET : GPIO_PIN_RESET);
 			TIM2->CCR3 =(uint16_t)clmp((pwmValue < 0) ? -pwmValue : pwmValue, 0 , 65535);
 
-			toggle_nSleep();
-
-
-		  // Motor control calculations can be called from here
 		}
 /* USER CODE END 0 */
 
@@ -243,12 +236,6 @@ int main(void)
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 
-
-
-  //start motor PWM
-
-
-
     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
@@ -258,28 +245,23 @@ int main(void)
     TIM2->CCR1 = 0;
     TIM2->CCR2 = 0;
     TIM2->CCR3 = 0;
-    //HAL_Delay(100);
-    //TIM15->CCR2 = 3000;
     TIM15->CCR2 = 0;
 
 
     toggle_nSleep();
 
-    //start encoders
-        HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_1 | TIM_CHANNEL_2);
-        HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_1 | TIM_CHANNEL_2);
-        HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_1 | TIM_CHANNEL_2);
+    HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_1 | TIM_CHANNEL_2);
+    HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_1 | TIM_CHANNEL_2);
+    HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_1 | TIM_CHANNEL_2);
 
 
-        Feedback feedback = { // (1)
+        Feedback feedback = { 
         	        .speed1 = 0,
         	        .speed2 = 0,
         	        .speed3 = 0,
         	        .delimiter = 0xAAAA
         	    };
 
-
-        //Thrower_Send(0);
     HAL_TIM_Base_Start_IT(&htim6);
 
 
@@ -305,17 +287,14 @@ int main(void)
 
 		TIM15->CCR2 = command.throwerSpeed;
 
-
-		feedback.speed1 = M1.speed;
-		feedback.speed2 = M2.speed;
-		feedback.speed3 = M3.speed;
+		feedback.speed1 = M1.positionChange;
+		feedback.speed2 = M2.positionChange;
+		feedback.speed3 = M3.positionChange;
 
 		CDC_Transmit_FS(&feedback, sizeof(feedback));
 	  }
 
 	}
-
-
 
   /* USER CODE END 3 */
 }
