@@ -1,4 +1,4 @@
-# picr22-team-valdis
+# picr22-team-valdis Motor and Mainboard drivers
 
 The purpose of this board is to control 3 motor drivers and 1 additional servo. This can be done with an external serial connection through USB. Additionally the board also provides power for the 3 motor drivers (servo requires separate power source).
 
@@ -8,7 +8,7 @@ The motor driver side is powered by an external LiPo battery (in our case a 16.8
 
 Motor drivers (PDRV8243HRXYQ1) recieve 16.8V input for power. From the isolators, drivers recieve a PWM, direction and sleep signal. PWM signal tells how fast the motors have to spin and direction signal indicates via boolean (0 or 1) which way the wheel spins. Sleep signal is basically there to wake up the motor drivers from standby state. For simplicity we connected DRVOFF to ground, which means that they will never be turned off while power is connected. Current for motor drivers are limited with 47K resistors through ITRIP pin. Motor driver power is also supplied through 4x4mm solder pads.
 
-Pinout for STM32G441KBT6
+== Pinout for STM32G441KBT6
 
 PA0 - M1_PWM_A (wheel PWM signal output)
 
@@ -53,7 +53,7 @@ PB7 - M3_ENC_A (wheel encoder read)
 Pins 1,17,15,16,32,14 are used for power. Rest of unmentioned pins were not used.
 
 
-J2 Programmer
+== J2 Programmer
 
 1- 3.3V
 
@@ -76,7 +76,7 @@ J2 Programmer
 10- NRST
 
 
-J3 Motor 1
+== J3 Motor 1
 
 1- GND
 
@@ -87,7 +87,7 @@ J3 Motor 1
 4- M1_ENC_B
 
 
-J4 Motor 2
+== J4 Motor 2
 
 1- GND
 
@@ -98,7 +98,7 @@ J4 Motor 2
 4- M2_ENC_B
 
 
-J5 Motor 3
+== J5 Motor 3
 
 1- GND
 
@@ -109,7 +109,7 @@ J5 Motor 3
 4- M3_ENC_B
 
 
-J6 Thrower 
+== J6 Thrower 
 
 1- GND
 
