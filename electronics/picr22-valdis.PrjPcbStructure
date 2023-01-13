@@ -1,0 +1,4 @@
+Record=TopLevelDocument|FileName=mainboard_valdis.SchDoc|SheetNumber=1
+Record=SheetSymbol|SourceDocument=mainboard_valdis.SchDoc|Designator=MCU_1|SchDesignator=MCU_1|FileName=mcu_valdis1.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=mcu_valdis1.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=mainboard_valdis.SchDoc|Designator=MCU_2|SchDesignator=MCU_2|FileName=mcu_valdis2.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=mcu_valdis2.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=mainboard_valdis.SchDoc|Designator=MCU_3|SchDesignator=MCU_3|FileName=mcu_valdis3.SchDoc|SheetNumber=4|SymbolType=Normal|RawFileName=mcu_valdis3.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
