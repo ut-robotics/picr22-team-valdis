@@ -4,18 +4,14 @@ Team members
 
 *Electronics:* Karl Sander Vinkel
 
-*Mechanics:* Karl Sander Vinkel, Kevin Kirbits
+*Mechanics:* Karl Sander Vinkel
 
 *Programming:* Kevin Kirbits, Markus Männil, Arnold Leonhard Mertsin
-
-== External Links
-
-https://www.autodesk.com/products/fusion-360/overview[Fusion360]
 
 
 == Project Links
 
-https://a360.co/3NJWebr[Valdis Fusion360]
+https://a360.co/3goN0VZ[Valdis Fusion360]
 
 
 == Info
