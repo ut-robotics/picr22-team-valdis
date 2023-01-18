@@ -1,0 +1,401 @@
+# picr22-team-valdis
+
+Team members
+
+*Electronics:* Karl Sander Vinkel
+
+*Mechanics:* Karl Sander Vinkel
+
+*Programming:* Kevin Kirbits, Markus Männil, Arnold Leonhard Mertsin
+
+
+== Project Links
+
+https://a360.co/3goN0VZ[Valdis Fusion360]
+
+
+== Info
+
+Anydesk ip 198414610 - Valdis111
+
+SSH valdis@valdis password: valdis
+
+static ip: 172.17.152.9
+
+== Programming
+
+Libraries:
+
+opencv2: used for image processing
+
+pyrealsense2: for the camera implementation
+
+json: to work with the json data received from the referee
+
+websockets: To set up the client to receive the commands from the referee server
+
+math: for mathematical operations
+
+numpy: To work with the frames received from the image
+
+serial: to get access to the serial ports
+
+time: for time related tasks
+
+struct: Used to convert Python values to the motors. 
+
+Game logic: clone repo --> open up config_colors.py and use macros to set balls and baskets (as we didn't implement line dectection) --> run omni_main.py to run manualy or to run with reffere comands run main_uwu.py (change robot name on line 86 and ref ip on 87) --> runs main_loop which is described bellow --> robot tries to find the ball (gets camera info(baskets and balls)), if it finds it then it moves to ball (using omni_motion class) untill ball is in optimal positsion (in front of the robot). Robot then orbits until it sees the basket and orbits slower until robot thrower is aligned with basket. Then it checks if ball is in optimal position if not then robot correkts himself and orbits again. Then throws the ball and looks for another ball.
+
+Block Diagram: 
+
+image::images/valdis_blokk.png[]
+
+Bad: The code wasn't adaptable for different hardware, changes to the  electronics could cause the logic to completely fall apart. Can be improved upon by implementing more equations instead of hardcoding the different variables.
+
+== Electronics
+
+All parts used for the final mainboard were provided by the course, so no special parts were used. On the board design part everything worked fine. Although I forgot to add power through the board to the thrower motor, this is not an issue since power can be connected straight from the battery. This also saves some room on the board. If I had to change something then I would make the driver pins longer for easier soldering. Since you can't see the pads you're connecting, it's good to have some extra room to solder by hand if needed. Even if it looks good and connected, more tin isn't a bad thing. Placing components diagonally also creates more room and shorter traces in some layouts. Using both sides of the board is a must if you wan't to comfortably fit components on a smaller board. 
+
+image::images/AltiumBoard2D.jpg[]
+
+image::images/AltiumBoard3D.jpg[]
+
+image::images/20221217_134152.jpg[]
+
+image::images/20221217_134201.jpg[]
+
+== Mechanics
+
+All parts used for the final robot design were available in the labs or could be fabricated.
+
+I didn't like how big our test robot was, so I made it smaller and thinner as a start. The thrower didn't fit height wise,
+so I made it poke out a bit. It doesn't impact vision so all good. Initially the thrower was aimed too forward so we lost height but gained distance with throwing.
+As we didn't need the robot to throw the ball 6 meters, I made adjustments to make the ball exit angle steeper. This improved close range significantly.
+Accuracy was later further increased by adding inner walls to eliminate side to side play (originally spacing was 45.6mm but pinching it down to 42mm helped alot). 
+Stretching out the front funnel also helped with ball gathering. I added more rollers to the wheels so that at any time, more wheel would be touching the ground than before. Covering the back with 3D printed walls was beneficial to others more than us, since it decreased 
+the chance of missinterpetring components for competition pieces. Something that I am very proud of is making as many screws flush mounted as I could. This adds
+even more "Roomba with a mortar" vibes. But if I could try again, I would try and make a thrower with grabbing and adjustable angle options. I wanted to make one,
+but time limitations tossed that idea out the window. Otherwise I am quite pleased with my design.
+
+image::images/im15.jpg[]
+
+image::images/im14.jpg[]
+
+image::images/im4.jpg[]
+
+image::images/im9.jpg[]
+
+image::images/im12.jpg[]
+
+== Personal comments
+
+*Karl Sander Vinkel:* I worked on both electronics and mechanics for the main part. Also consulted on programming at times.
+I learned to use Altium Designer and Fusion 360 where the ladder sparked an intrest in learning more about 3D printing.
+
+Fusion was very fun to use at times and intuitive once you spend more than a couple of hours at a time working on something.
+Altium has a steep learning curve and even with my many many hours of googling for anwsers, I still feel like a complete novice with this.
+
+If I had to do it again, I would form a team with people who have more experience in fields other than programming.
+Having to focus on both electronics and mechanics really takes alot more time than I anticipated. Setting timelines even for yourself
+is very important. This way you won't have a situation where another team member is waiting on you for something. Drawing things out roughly
+on paper also helps. You get a general idea of what you want and can visualize better after. 
+
+For people in mechanics, try and get yourself acquainted with the cnc and lathe rather sooner than later. A live queue will develop faster than you think
+and by the time everyone has made new robots, you'll still be working on learning how to use the machinery. 3D printing wise google a bit and try out
+different settings in PrusaSlicer for a better fit and finish.
+
+For people in electronics, as soon as the test robot is running, start work on the board immediately. Getting things done at the last minute
+isn't good. Depending on how universal the software will be, reprogramming the robot to work with the new mainboard may take more time than
+anticipated. Programming in C will make you cry, thus I reccomend that writing firmware should be a team effort.
+
+For the instructors... If possible, when showing how to use the CNC (for example) for the first time, get a small group like 2-3 people to shorten
+the queue. Smaller parts can fit together and more people can get working on the final design faster. Also since the rooms tend to be pretty packed
+with people during practical times, maybe an extra time on another day would be better for students who need more feedback on the spot. Biweekly or 
+something maybe.
+
+*Markus Männil:* I worked mainly in programming side and I was kind of the main programmer. As I had never had expirance in robotics it was kind of an fun challange. I learned alot and I wish I had read more about the tasks, because I firstly missed alot of tips and requirments which would have made my life easyer.
+Overall I improoved my programming skills alot and got more familiar with robotics. What I would do diffrently would be that I would plan out more of the code not just writing it and making it up on the go. So that the structure would be better and easier to manipulate. Also I would ask more help for example we found out on the day of the competition that in color thresholding you can zoom in.
+I would suggest students to ask for help and advice also read documentation. Also communicate with other groups (they often have different and better ideas how to solve some problms)
+
+*Arnold Leonhard Mertsin:* 
+
+I worked everywhere as was needed. I did a little of electronics in which i put some wires together. I worked on mechanics where I mostly drilled and threaded the holes of adapters. And worked on getting some parts that were needed or tried to fix some that were in a little bit of a bad condition. Mainly though I did help with the programming side. 
+I learnt a little more about electronics, how to connect to and program a board. Also have a new insight into how robots are created and what manufacturing processes might be involved. Also learnt that omniwheels and omnidirection are awesome.
+If I'd have to do things differently next time. I think I would try to contribute even more of my time if I could. Namely I did have a hard time helping out at critical times due to personal health problems. Also would definitely use way more github. We indeed did have some issues that when we edited code it broke something but we didn't have exactly a backup.
+I liked the whole aspect of building the robot. Figuring how things could and would work. The not so liked parts were for instance for me the presentations but that depends on the person. Who wants to shine on a stage and who doesn't. Also it was quite nerve racking sometimes to be waiting for feedback on tasks that gave points when they were close to deadlines.
+I Suggest for everyone to definitely start working on the robot immediatly. Catching up will be even more frustrating and stress enducing then it's worth. Also *Definetly* check when the competitio is. Since we started to first work on the robot while considering the competition to be in January but instead it was in December. Be careful with that one.
+I quite like the suggestions Karl Sander Vinkel already gave. Some more times to just get some more active feedback would be definitely good. To just get some good feedback while the instructors don't have to juggle trying to teach other students how to use the CNC for example and so on.
+
+*Kevin Kirbits:* I worked mainly on the programming side and assisted a little on the manufacturing side. I learned that a lot of wasted time could be saved by looking at the resources from the previous years teams. 
+What I would do differently if given the chance to do it all over again would be to plan my time more effeciently  and I would look more into the electronics part so i would be more well versed in all aspects of the robot. I liked that there was a lot to learn and don't have any criticisms about the idea of the course itself.
+For students taking this course I would suggest planning your time accordingly and to be prepeared to spend more time with the robot than you allocated in your head. There are so many things that can go wrong or not work as intended. Something that you thought would be a 10 minute job can turn into a 2 hour endeavour.
+For the instructors I would advise to gather more assistants to help especially for semesters when there are more teams participating. Inevitably nearing the deadlines everyone will want to present their work and it is understandable that you cannot reach everyone when there are many teams. 
+
+== Blog
+
+=== Saturday 2022-09-03
+*Markus:* Attended bootcamp
+
+=== Sunday 2022-09-04
+*Karl:* Started work on testrobot electronics and assisted with initial NUC setup. (3h)
+
+*Virco:* Installed Ubuntu and setup NUC to open without the need of direct input. (2h)
+
+*Markus:* Worked with Virco to help setup NUC to specified requierments. (2h)
+
+=== Tuesday 2022-09-06
+*Kevin:* Added VNC connection capability to NUC. MacOS didn't like VSC SSH connection. Will try SSH again on later date. (2h)
+
+*Karl:* Continued soldering electronics. Discovered burnt capacitor on motor board. (2h)
+
+=== Monday 2022-09-12
+*Karl:* Finished soldering testrobot electronics and changed out burnt capacitor. Will test motors later this week. (3h)
+
+*Markus:* Continued debugging SSH connection. Static connection settings didn't work (MacOS wasn't the problem). Will attempt to fix later this week. (2h)
+
+=== Tuesday 2022-09-13
+*Karl:* Minor fixes to testrobot electronics. Positioned components and wires better. Ran into a problem with Hterm motor testing. Will make second attempt later in the week. (2.5h)
+        
+*Kevin:* Got a stable remote connection with the added ability to have other members connect to Valids from their homes(if not present). (2.5h)
+
+*Markus:* Worked with Kevin to get remote connection up and running. (2.5h)
+
+=== Sunday 2022-09-18
+*Kevin:* Tested different ball detection methods to determine best one (2h)
+
+=== Monday 2022-09-19
+*Everyone:* Progress presentation (1.5h)
+
+=== Thursday 2022-09-22
+*Karl:* Test robot components tested and all working with external powersupply. Assembled robot. Have to extend battery connector and clean up wires a bit. (2.5h)
+
+=== Monday 2022-09-26
+*Karl:* Minor fixes to testrobot. Discovered possible issue with wheel motor encoder (working for now). Remounted camera. Helped with programming. (2.5h)
+
+*Virco:* Discussed thrower design with instructors. Will make adjustments to design for revision. (2h)
+
+*Markus:* Tested different camera settings for ball and court detection. (2.5h)
+
+*Arnold:* Tested different camera settings for ball and court detection. (2h)
+
+=== Wednesday 2022-09-28
+*Karl:* Got mainboard-NUC communications working and the testrobot is capable of moving on it's own. Experimented with pyrealsense2 library to implement depth sensor. Worked on PCB schematic. (4h)
+
+*Markus:* Helped set up mainboard communication with NUC. (2h)
+
+=== Thursday 2022-09-29
+*Virco:* Finished thrower design and showed to instructors. Waiting to be cut and assembled. (2h)
+
+*Karl:* Worked on schematic and object distance measuring with realsense camera. (4h)
+
+=== Saturday 2022-10-01
+*Karl:* Worked on schematic. (1.5h)
+
+=== Monday 2022-10-03
+*Markus:* Progress presentation (2h)
+
+=== Wednesday 2022-10-05
+*Markus:* Tested moving with serial and struct (2h)
+
+*Arnold:* Tested moving with serial and struct (2h)
+
+=== Monday 2022-10-10
+*Mechanics:* Virco left the course. New mechanics are Karl and Kevin.
+
+*Karl:* Worked on schematic. (1.5h)
+
+=== Tuesday 2022-10-11
+*Kevin:* Tested remote control integration. Successfully moved robot forward with remote control. Will add more functionality on a later date. (2h)
+
+*Karl:* Worked on schematic. (1h)
+
+=== Friday 2022-10-14
+*Kevin:* Added more functionality to moving robot with controller. (2h)
+
+*Markus:* Made game logic diagram to establish tasks to work on. Optimized movement. (2h)
+
+*Arnold:* Made game logic diagram to establish tasks to work on. Optimized movement. (2h)
+
+=== Sunday 2022-10-16
+*Kevin:* Added more functionality to moving robot with controller. (2h)
+
+=== Monday 2022-10-17
+*Arnold:* Progress presentation. (2h)
+
+*Karl:* Worked on fixing thrower design from feedback. Progress presentation. (3h)
+
+=== Thursday 2022-10-20
+*Karl:* Continued work on thrower design. Also started second design with adjustable thrower angle. (5h)
+
+=== Friday 2022-10-28
+*Karl:* Finished thrower fabrication and added thrower to robot. Thrower motor needs more grip.  Also helped with ball following algorithm.  (4h)
+
+*Markus:* Worked on robot-ball lineup algorithm. Tested throwing capability. (4h)
+
+*Kevin:* Worked on controller, added mapped a throw button. Helped with ball following algorithm. (4h)
+
+=== Sunday 2022-10-30
+*Karl:* Worked on schematic. (3h)
+
+=== Monday 2022-10-31
+*Markus:* Tuned color mapping and movement after detection. (1h)
+
+*Karl:* Mapped linear thrower controls and added 2-speed controls for movement with controller. (1h)
+
+=== Tuesday 2022-11-01
+*Markus:* Worked on fine tuning movement. (2h)
+
+*Karl:* Worked on two different omniwheel designs, one with 3D printed large rollers and one with small metal rollers. Will discuss which option to further pursue. (2h)
+
+=== Friday 2022-11-04
+*Karl:* Finished wheel design revision. Finished motor mount and camera mount (top and bottom plates are about 80% complete for initial design). Will get measurements for batteries and thrower voltage regulator over the weekend. Will also start work on an updated thrower design (current throw angle is a bit too steep). Completed new chassis design to be expected by Monday. Will also work on finishing schematic over the weekend to start work on PCB by next week. Also had idea for fixed battery sockets but won't concentrate on those at this time. (7h)
+
+=== Sunday 2022-11-06
+*Kevin and Arnold:* Did adjustments to the orbiting. Valdis will orbit around the ball until the ball is directly in the path of the basket. Once the adequate conditions are met valdis will pick up the ball and shoot. (Next up on the todo is to adjust the throwing angle and motor speed)(Also need to fix the startup ball finding procedure, if the robot sees no ball at initial startup the program will crash). (3h)
+
+=== Monday 2022-11-07
+*Karl:* Worked on new chassis and schematic. (3h)
+*Markus:* Started building omnimotion. (3h)
+
+=== Tuesday 2022-11-08
+*Karl:* Adjusted new thrower design so that ramp walls are closer together. Printed new wheels. Made modifications to thrower motor support piece. (5h)
+
+*Kevin:* Worked on omnimotion. (4h)
+
+*Markus:* Worked on omnimotion. (5h)
+
+=== Wednesday 2022-11-09
+*Karl:* Worked on wheels and chassis design. Also did fixes on the schematic(4h)
+
+*Markus:* Worked on ball following orbiting and throwing (8h)
+
+*Kevin:* Worked on ball following orbiting and throwing (6h)
+
+=== Thursday 2022-11-10
+*Markus:* Took part in 1st test competition. (4h)
+
+*Kevin:* Took part in 1st test competition. (4h)
+
+=== Sunday 2022-11-13
+*Karl:* Worked on schematic. (4h)
+
+=== Monday 2022-11-14
+*Karl:* Fixed issues on schematic. (1h)
+
+*Arnold:* Progress presentation. (2h)
+
+=== Friday 2022-11-18
+*Karl:* Worked on PCB and chassis (4h)
+
+=== Saturday 2022-11-19
+*Karl:* Worked on PCB (3h)
+
+=== Sunday 2022-11-20
+*Karl:* Worked on PCB and chassis (4h)
+
+=== Monday 2022-11-21
+*Karl:* Worked on chassis design (3h)
+
+=== Wednesday 2022-11-23
+*Karl:* Worked on chassis design (3h)
+
+*Markus:* Worked on robot code (4h)
+
+=== Thursday 2022-11-24
+*Karl:* Cut out 2/3 motor mounts (2h)
+
+=== Saturday 2022-11-26
+*Karl:* Worked on PCB (3h)
+
+=== Sunday 2022-11-27
+*Karl:* Worked on PCB (3h)
+
+=== Monday 2022-11-28
+*Kevin:* Milled new wheel adapters. (3h)
+
+*Arnold:* Progress presentation. (2h)
+
+=== Wednesday 2022-11-30
+*Karl:* Printed rear walls for new robot. (3h)
+
+*Kevin:* Cleaned up new wheel adapters for use. (3h)
+
+*Markus:* Worked on refactoring code. (2h)
+
+=== Thursday 2022-12-01
+*Karl:* Worked on PCB (3h)
+
+*Arnold:* Threaded wheel adapters (2h)
+
+=== Saturday 2022-12-02
+*Karl:* Worked on PCB (4h)
+
+=== Sunday 2022-12-03
+*Karl:* Finished PCB, generated Gerber files for ordering. Made manufacturing files for chassis. (4h)
+
+*Kevin:* Worked on referee application (4h)
+
+*Markus:* Worked on referee application (4h)
+
+*Arnold:* Worked on referee application (4h)
+
+=== Wednesday 2022-12-07
+*Karl:* Cut out new chassis components and started assembly proccess (6h)
+
+=== Friday 2022-12-09
+*Karl:* Cleaned and assembled new chassis. (5h)
+
+*Markus:* Cleaned and assembled new chassis. (5h)
+
+=== Sunday 2022-12-11
+*Karl:* Fitted old electronics into new chassis. (1h)
+
+*Markus:* Started refactoring code for new dimensions. (1h)
+
+=== Tuesday 2022-12-13 
+*Markus:* Worked on adabting code on new robot (4h)
+
+=== Wednesday  2022-12-14 
+*Markus:* Worked on adabting code on new robot and fiksing minor issues with robot (10h)
+
+== Thurstday 2022-12-15
+*Markus* Worked on robot code and subbmitted tasks (6h)
+
+== Friday 2022-12-16
+*Markus* Worked on mainboard code (12h)
+*Kevin* Worked on mainboard code (12h)  
+*Karl* Worked on mainboard code (12h)
+
+== Friday 2022-12-16
+*Markus* Worked on mainboard code (12h)
+*Kevin* Worked on mainboard code (12h)  
+*Karl* Worked on mainboard code (12h)
+
+== Satureday 2022-12-17
+*Markus* Competition and hyperparamter fixing for task (10h)
+*Kevin* Competition and hyperparamter fixing for task (10h) 
+
+=== Wednesday 2022-12-21
+*Arnold:* Worked on installing the mainboard into the robot and debuging some power cable problems (2h)
+
+*Kevin:* Worked on installing the mainboard into the robot and debuging some power cable problems (2h)
+
+=== Thursday 2022-12-22
+*Arnold:* Worked on fixing the mainboard's software errors and bugs (4h)
+
+*Kevin:* Worked on fixing the mainboard's software errors and bugs (4h)
+
+=== Friday 2022-12-23
+*Arnold:* Worked on more software and debugging bad connection between the mainboard and the IDE (4h)
+
+*Kevin:* Worked on more software and debugging bad connection between the mainboard and the IDE (4h)
+
+=== Wednesday 2022-12-28
+*Arnold:* Fixing main code which was affected by the new software changes from the mainboard software (4.5h) 
+
+*Kevin:* Fixing main code which was affected by the new software changes from the mainboard software (4.5h)
+
+=== Thursday 2022-12-29
+*Arnold:* Worked on more fixes to the main code (3.5h)
+
+*Kevin:* Worked on more fixes to the main code (3.5h)
