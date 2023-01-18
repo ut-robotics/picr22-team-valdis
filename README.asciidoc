@@ -28,6 +28,24 @@ Libraries:
 
 State Machine: 4 main states (FIND_BALL, MOVE_TO_BALL, ORBIT, THROW) FIND -> MOVE -> ORBIT -> THROW. Every tick robot decides in which state it's in from image processing
 
+opencv2: used for image processing
+
+pyrealsense2: for the camera implementation
+
+json: to work with the json data received from the referee
+
+websockets: To set up the client to receive the commands from the referee server
+
+math: for mathematical operations
+
+numpy: To work with the frames received from the image
+
+serial: to get access to the serial ports
+
+time: for time related tasks
+
+struct: Used to convert Python values to the motors. 
+
 Block Diagram: 
 
 image::images/valdis_blokk.png[]
