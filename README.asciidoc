@@ -56,6 +56,12 @@ Bad: The code wasn't adaptable for different hardware, changes to the  electroni
 
 All parts used for the final mainboard were provided by the course, so no special parts were used. On the board design part everything worked fine. Although I forgot to add power through the board to the thrower motor, this is not an issue since power can be connected straight from the battery. This also saves some room on the board. If I had to change something then I would make the driver pins longer for easier soldering. Since you can't see the pads you're connecting, it's good to have some extra room to solder by hand if needed. Even if it looks good and connected, more tin isn't a bad thing. Placing components diagonally also creates more room and shorter traces in some layouts. Using both sides of the board is a must if you wan't to comfortably fit components on a smaller board. 
 
+image::images/AltiumBoard2D.jpg[]
+
+image::images/AltiumBoard3D.jpg[]
+
+image::images/20221217_134152.jpg[]
+
 == Mechanics
 
 All parts used for the final robot design were available in the labs or could be fabricated.
@@ -68,6 +74,16 @@ Stretching out the front funnel also helped with ball gathering. I added more ro
 the chance of missinterpetring components for competition pieces. Something that I am very proud of is making as many screws flush mounted as I could. This adds
 even more "Roomba with a mortar" vibes. But if I could try again, I would try and make a thrower with grabbing and adjustable angle options. I wanted to make one,
 but time limitations tossed that idea out the window. Otherwise I am quite pleased with my design.
+
+image::images/im15.jpg[]
+
+image::images/im14.jpg[]
+
+image::images/im4.jpg[]
+
+image::images/im9.jpg[]
+
+image::images/im12.jpg[]
 
 == Personal comments
 
