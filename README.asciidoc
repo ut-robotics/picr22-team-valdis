@@ -62,6 +62,8 @@ image::images/AltiumBoard3D.jpg[]
 
 image::images/20221217_134152.jpg[]
 
+image::images/20221217_134201.jpg[]
+
 == Mechanics
 
 All parts used for the final robot design were available in the labs or could be fabricated.
