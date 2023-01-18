@@ -12,6 +12,19 @@ pip3.9 install opencv-python pyrealsense2 numpy websocket-client pyserial
 clone the repo -> open up the file config_colors.py and use the macros to establish the balls, baskets and court ->  finally run omni_main
 if you also want it to work with a referee then in the end run main_uwu but change lines 86 and 87 to fit your current environment
 
+== How to use segmenation
+Segmentation module installation:
 
+cd segment_module
+pip3.9 install .
+Running color configurator:
+
+mkdir colors
+touch colors/colors.pkl
+python3.9 config_colors.py
+Running an example:
+
+python3.9 main.py
+If you encounter dependency errors, resolve them with pip3.9
 
 
