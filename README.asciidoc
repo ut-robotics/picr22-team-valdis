@@ -24,9 +24,7 @@ static ip: 172.17.152.9
 
 == Programming
 
-Libraries: 
-
-State Machine: 4 main states (FIND_BALL, MOVE_TO_BALL, ORBIT, THROW) FIND -> MOVE -> ORBIT -> THROW. Every tick robot decides in which state it's in from image processing
+Libraries:
 
 opencv2: used for image processing
 
@@ -45,6 +43,11 @@ serial: to get access to the serial ports
 time: for time related tasks
 
 struct: Used to convert Python values to the motors. 
+
+
+Game Logic:
+
+State Machine: 4 main states (FIND_BALL, MOVE_TO_BALL, ORBIT, THROW) FIND -> MOVE -> ORBIT -> THROW. Every tick robot decides in which state it's in from image processing
 
 Block Diagram: 
 
