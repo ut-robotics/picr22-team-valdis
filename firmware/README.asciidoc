@@ -16,7 +16,7 @@ typedef struct Command {
 
 The mainboard returns feedback structs in the form:
 
-[source,ruby]
+[source,c++]
 ----
 typedef struct Feedback {
 
