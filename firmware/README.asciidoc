@@ -1,8 +1,8 @@
 == Mainboard communication
 
 The mainboard receives structs in the form:
-
-
+[source,c++]
+----
 typedef struct Command {
 
 	int16_t speed1; // Set speed value for motor 1
@@ -12,11 +12,12 @@ typedef struct Command {
 	uint16_t delimiter; // indicates end of command 
 	
 } Command;
-
+----
 
 The mainboard returns feedback structs in the form:
 
-
+[source,ruby]
+----
 typedef struct Feedback {
 
 	int16_t speed1; // return encoder readings for motor 1
@@ -26,3 +27,4 @@ typedef struct Feedback {
 	
 } Feedback;
 
+----
