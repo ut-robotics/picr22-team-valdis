@@ -271,6 +271,23 @@ For the instructors I would advise to gather more assistants to help especially 
 === Wednesday  2022-12-14 
 *Markus:* Worked on adabting code on new robot and fiksing minor issues with robot (10h)
 
+== Thurstday 2022-12-15
+*Markus* Worked on robot code and subbmitted tasks (6h)
+
+== Friday 2022-12-16
+*Markus* Worked on mainboard code (12h)
+*Kevin* Worked on mainboard code (12h)  
+*Karl* Worked on mainboard code (12h)
+
+== Friday 2022-12-16
+*Markus* Worked on mainboard code (12h)
+*Kevin* Worked on mainboard code (12h)  
+*Karl* Worked on mainboard code (12h)
+
+== Satureday 2022-12-17
+*Markus* Competition and hyperparamter fixing for task (10h)
+*Kevin* Competition and hyperparamter fixing for task (10h) 
+
 === Wednesday 2022-12-21
 *Arnold:* Worked on installing the mainboard into the robot and debuging some power cable problems (2h)
 
