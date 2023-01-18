@@ -22,6 +22,15 @@ SSH valdis@valdis password: valdis
 
 static ip: 172.17.152.9
 
+== Programming
+
+
+Bad: The code wasn't scalable changes in electronics could cause the logic to completely fall apart
+
+== Electronics
+
+== Mechanics
+
 == Personal comments
 
 *Karl Sander Vinkel:*
