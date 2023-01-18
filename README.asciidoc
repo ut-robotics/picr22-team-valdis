@@ -24,6 +24,11 @@ static ip: 172.17.152.9
 
 == Programming
 
+Libraries:
+
+Logic:
+
+Block diagramm:
 
 Bad: The code wasn't adaptable for different hardware, changes to the  electronics could cause the logic to completely fall apart. Can be improved upon by implementing more equations instead of hardcoding the different variables.
 
