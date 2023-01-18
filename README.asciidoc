@@ -34,6 +34,7 @@ static ip: 172.17.152.9
 What I would do differently if given the chance to do it all over again would be to plan my time more effeciently  and I would look more into the electronics part so i would be more well versed in all aspects of the robot. I liked that there was a lot to learn and don't have any criticisms about the idea of the course itself.
 For students taking this course I would suggest planning your time accordingly and to be prepeared to spend more time with the robot than you allocated in your head. There are so many things that can go wrong or not work as intended. Something that you thought would be a 10 minute job can turn into a 2 hour endeavour.
 For the instructors I would advise to gather more assistants to help especially for semesters when there are more teams participating. Inevitably nearing the deadlines everyone will want to present their work and it is understandable that you cannot reach everyone when there are many teams. 
+
 == Blog
 
 === Saturday 2022-09-03
