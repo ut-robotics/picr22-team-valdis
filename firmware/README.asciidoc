@@ -9,7 +9,7 @@ typedef struct Command {
 	int16_t speed2; // Set PWM for motor 2
 	int16_t speed3; // Set PWM for motor 3
 	uint16_t throwerSpeed; // Set PWM for thrower motor
-	uint16_t delimiter;
+	uint16_t delimiter; // indicates end of command 
 	
 } Command;
 
@@ -19,9 +19,9 @@ The mainboard returns feedback structs in the form:
 
 typedef struct Feedback {
 
-	int16_t speed1; // Set speed for motor 1
-	int16_t speed2; // Set speed for motor 3
-	int16_t speed3; // Set speed for motor 2
+	int16_t speed1; // return encoder readings for motor 1
+	int16_t speed2; // return encoder readings for motor 3
+	int16_t speed3; // return encoder readings for motor 2
 	uint16_t delimiter; // value is set 0xAAAA
 	
 } Feedback;
