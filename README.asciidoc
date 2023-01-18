@@ -40,9 +40,33 @@ All parts used for the final mainboard were provided by the course, so no specia
 
 == Mechanics
 
+All parts used for the final robot design were available in the labs or could be fabricated. 
+
 == Personal comments
 
-*Karl Sander Vinkel:*
+*Karl Sander Vinkel:* I worked on both electronics and mechanics for the main part. Also consulted on programming at times.
+I learned to use Altium Designer and Fusion 360 where the ladder sparked an intrest in learning more about 3D printing.
+
+Fusion was very fun to use at times and intuitive once you spend more than a couple of hours at a time working on something.
+Altium has a steep learning curve and even with my many many hours of googling for anwsers, I still feel like a complete novice with this.
+
+If I had to do it again, I would form a team with people who have more experience in fields other than programming.
+Having to focus on both electronics and mechanics really takes alot more time than I anticipated. Setting timelines even for yourself
+is very important. This way you won't have a situation where another team member is waiting on you for something. Drawing things out roughly
+on paper also helps. You get a general idea of what you want and can visualize better after. 
+
+For people in mechanics, try and get yourself acquainted with the cnc and lathe rather sooner than later. A live queue will develop faster than you think
+and by the time everyone has made new robots, you'll still be working on learning how to use the machinery. 3D printing wise google a bit and try out
+different settings in PrusaSlicer for a better fit and finish.
+
+For people in electronics, as soon as the test robot is running, start work on the board immediately. Getting things done at the last minute
+isn't good. Depending on how universal the software will be, reprogramming the robot to work with the new mainboard may take more time than
+anticipated. Programming in C will make you cry, thus I reccomend that writing firmware should be a team effort.
+
+For the instructors... If possible, when showing how to use the CNC (for example) for the first time, get a small group like 2-3 people to shorten
+the queue. Smaller parts can fit together and more people can get working on the final design faster. Also since the rooms tend to be pretty packed
+with people during practical times, maybe an extra time on another day would be better for students who need more feedback on the spot. Biweekly or 
+something maybe.
 
 *Markus Männil:* I worked mainly in programming side and I was kind of the main programmer. As I had never had expirance in robotics it was kind of an fun challange. I learned alot and I wish I had read more about the tasks, because I firstly missed alot of tips and requirments which would have made my life easyer.
 Overall I improoved my programming skills alot and got more familiar with robotics. What I would do diffrently would be that I would plan out more of the code not just writing it and making it up on the go. So that the structure would be better and easier to manipulate. Also I would ask more help for example we found out on the day of the competition that in color thresholding you can zoom in.
