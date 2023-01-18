@@ -44,10 +44,7 @@ time: for time related tasks
 
 struct: Used to convert Python values to the motors. 
 
-
-Game Logic:
-
-State Machine: 4 main states (FIND_BALL, MOVE_TO_BALL, ORBIT, THROW) FIND -> MOVE -> ORBIT -> THROW. Every tick robot decides in which state it's in from image processing
+Game logic: clone repo --> open up config_colors.py and use macros to set balls and baskets (as we didn't implement line dectection) --> run omni_main.py to run manualy or to run with reffere comands run main_uwu.py (change robot name on line 86 and ref ip on 87) --> runs main_loop which is described bellow --> robot tries to find the ball (gets camera info(baskets and balls)), if it finds it then it moves to ball (using omni_motion class) untill ball is in optimal positsion (in front of the robot). Robot then orbits until it sees the basket and orbits slower until robot thrower is aligned with basket. Then it checks if ball is in optimal position if not then robot correkts himself and orbits again. Then throws the ball and looks for another ball.
 
 Block Diagram: 
 
