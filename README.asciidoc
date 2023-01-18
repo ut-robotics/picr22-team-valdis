@@ -1,21 +1,17 @@
-== Running the code
+== Setup
+Install python 3.9 
 
-The code was run on Python 3.9.13
+Install pip 3.9 and distutils for python 3.9:
+
+Use Pip to install the dependencis:
+
+pip3.9 install opencv-python pyrealsense2 numpy websocket-client pyserial
+
+== Running the code
 
 clone the repo -> open up the file config_colors.py and use the macros to establish the balls, baskets and court ->  finally run omni_main
 if you also want it to work with a referee then in the end run main_uwu but change lines 86 and 87 to fit your current environment
 
 
-Setup
-Install python 3.9 to your machine
 
-Install pip3.9 and distutils for python 3.9:
 
-Install the required dependencies using pip:
-
-pip3.9 install opencv-python pyrealsense2 numpy websocket-client pyserial
-Compile the segmentation module as by the instructions below. Remember that you need python dev tools to compile code (python3.9-dev and build-essential)
-
-If you are missing the tkinter module, you can install it with the following command:
-
-sudo apt-get install python3.9-tk
