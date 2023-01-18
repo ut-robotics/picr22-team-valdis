@@ -25,7 +25,7 @@ static ip: 172.17.152.9
 == Programming
 
 
-Bad: The code wasn't adaptable for different hardware changes in electronics could cause the logic to completely fall apart
+Bad: The code wasn't adaptable for different hardware, changes to the  electronics could cause the logic to completely fall apart
 
 == Electronics
 
