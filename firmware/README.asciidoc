@@ -2,6 +2,7 @@
 
 The mainboard receives structs in the form:
 
+
 typedef struct Command {
 
 	int16_t speed1;
