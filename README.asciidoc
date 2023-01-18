@@ -24,6 +24,11 @@ static ip: 172.17.152.9
 
 == Programming
 
+Libraries: 
+
+State Machine: 4 main states (FIND_BALL, MOVE_TO_BALL, ORBIT, THROW) FIND -> MOVE -> ORBIT -> THROW. Every tick robot decides in which state it's in from image processing
+
+Block Diagram:
 
 Bad: The code wasn't adaptable for different hardware, changes to the  electronics could cause the logic to completely fall apart. Can be improved upon by implementing more equations instead of hardcoding the different variables.
 
