@@ -35,7 +35,8 @@ Bad: The code wasn't adaptable for different hardware, changes to the  electroni
 
 *Karl Sander Vinkel:*
 
-*Markus Männil:*
+*Markus Männil:* I worked mainly in programming side and I was kind of the main programmer. As I had never had expirance in robotics it was kind of an fun challange. I learned alot and I wish I had read more about the tasks, because I firstly missed alot of tips and requirments which would have made my life easyer.
+Overall I improoved my programming skills alot and got more familiar with robotics. What I would do diffrently would be that I would plan out more of the code not just writing it and making it up on the go. So that the structure would be better and easier to manipulate. Also I would ask more help for example we found out on the day of the competition that in color thresholding you can zoom in.
 
 *Arnold Leonhard Mertsin:*
 
