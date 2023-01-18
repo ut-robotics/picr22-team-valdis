@@ -58,7 +58,16 @@ All parts used for the final mainboard were provided by the course, so no specia
 
 == Mechanics
 
-All parts used for the final robot design were available in the labs or could be fabricated. 
+All parts used for the final robot design were available in the labs or could be fabricated.
+
+I didn't like how big our test robot was, so I made it smaller and thinner as a start. The thrower didn't fit height wise,
+so I made it poke out a bit. It doesn't impact vision so all good. Initially the thrower was aimed too forward so we lost height but gained distance with throwing.
+As we didn't need the robot to throw the ball 6 meters, I made adjustments to make the ball exit angle steeper. This improved close range significantly.
+Accuracy was later further increased by adding inner walls to eliminate side to side play (originally spacing was 45.6mm but pinching it down to 42mm helped alot). 
+Stretching out the front funnel also helped with ball gathering. I added more rollers to the wheels so that at any time, more wheel would be touching the ground than before. Covering the back with 3D printed walls was beneficial to others more than us, since it decreased 
+the chance of missinterpetring components for competition pieces. Something that I am very proud of is making as many screws flush mounted as I could. This adds
+even more "Roomba with a mortar" vibes. But if I could try again, I would try and make a thrower with grabbing and adjustable angle options. I wanted to make one,
+but time limitations tossed that idea out the window. Otherwise I am quite pleased with my design.
 
 == Personal comments
 
