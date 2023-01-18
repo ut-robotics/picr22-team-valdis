@@ -15,19 +15,23 @@ if you also want it to work with a referee then in the end run main_uwu but chan
 == How to use segmenation
 Segmentation module installation:
 
+```
 cd segment_module
 pip3.9 install .
+```
 
 Running color configurator:
 
+```
 mkdir colors
 touch colors/colors.pkl
 python3.9 config_colors.py
-
+```
 
 Running an example:
+```
 python3.9 main.py
-
+```
 
 If you encounter dependency errors, resolve them with pip3.9
 
