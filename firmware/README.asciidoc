@@ -9,7 +9,7 @@ typedef struct Command {
 	int16_t speed2; // Set speed value for motor 2
 	int16_t speed3; // Set speed value for motor 3
 	uint16_t throwerSpeed; // Set PWM for thrower motor
-	uint16_t delimiter; // indicates end of command 
+	uint16_t delimiter; // value is 0xAAAA
 	
 } Command;
 ----
